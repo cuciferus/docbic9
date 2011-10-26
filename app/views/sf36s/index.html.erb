@@ -1,0 +1,97 @@
+<h1>Listing sf36s</h1>
+
+<table>
+  <tr>
+    <th>Pacient</th>
+    <th>Data</th>
+    <th>Sanatatea</th>
+    <th>Sanatatea comparativ</th>
+    <th>Activitati obositoare</th>
+    <th>Activitati moderate</th>
+    <th>Ridicat</th>
+    <th>Urcat etaje</th>
+    <th>Urcat etaj</th>
+    <th>Aplecat</th>
+    <th>Km1</th>
+    <th>Sute metri</th>
+    <th>O suta metri</th>
+    <th>Imbaiere</th>
+    <th>Perioada timp</th>
+    <th>Mai putine</th>
+    <th>Limitat</th>
+    <th>Dificultati</th>
+    <th>Perioada emotionale</th>
+    <th>Mai putine emotionale</th>
+    <th>Grija</th>
+    <th>Familie</th>
+    <th>Dureri</th>
+    <th>Durerea</th>
+    <th>Plin viata</th>
+    <th>Nervos</th>
+    <th>Deprimat</th>
+    <th>Calm</th>
+    <th>Energie</th>
+    <th>Descurajat</th>
+    <th>Extenuat</th>
+    <th>Fericit</th>
+    <th>Obosit</th>
+    <th>Vizite</th>
+    <th>Imbolnavesc</th>
+    <th>La fel</th>
+    <th>Inrautateasca</th>
+    <th>Sanatate excelenta</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sf36s.each do |sf36| %>
+  <tr>
+    <td><%= sf36.pacient %></td>
+    <td><%= sf36.data %></td>
+    <td><%= sf36.sanatatea %></td>
+    <td><%= sf36.sanatatea_comparativ %></td>
+    <td><%= sf36.activitati_obositoare %></td>
+    <td><%= sf36.activitati_moderate %></td>
+    <td><%= sf36.ridicat %></td>
+    <td><%= sf36.urcat_etaje %></td>
+    <td><%= sf36.urcat_etaj %></td>
+    <td><%= sf36.aplecat %></td>
+    <td><%= sf36.km1 %></td>
+    <td><%= sf36.sute_metri %></td>
+    <td><%= sf36.o_suta_metri %></td>
+    <td><%= sf36.imbaiere %></td>
+    <td><%= sf36.perioada_timp %></td>
+    <td><%= sf36.mai_putine %></td>
+    <td><%= sf36.limitat %></td>
+    <td><%= sf36.dificultati %></td>
+    <td><%= sf36.perioada_emotionale %></td>
+    <td><%= sf36.mai_putine_emotionale %></td>
+    <td><%= sf36.grija %></td>
+    <td><%= sf36.familie %></td>
+    <td><%= sf36.dureri %></td>
+    <td><%= sf36.durerea %></td>
+    <td><%= sf36.plin_viata %></td>
+    <td><%= sf36.nervos %></td>
+    <td><%= sf36.deprimat %></td>
+    <td><%= sf36.calm %></td>
+    <td><%= sf36.energie %></td>
+    <td><%= sf36.descurajat %></td>
+    <td><%= sf36.extenuat %></td>
+    <td><%= sf36.fericit %></td>
+    <td><%= sf36.obosit %></td>
+    <td><%= sf36.vizite %></td>
+    <td><%= sf36.imbolnavesc %></td>
+    <td><%= sf36.la_fel %></td>
+    <td><%= sf36.inrautateasca %></td>
+    <td><%= sf36.sanatate_excelenta %></td>
+    <td><%= link_to 'Show', sf36 %></td>
+    <td><%= link_to 'Edit', edit_sf36_path(sf36) %></td>
+    <td><%= link_to 'Destroy', sf36, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sf36', new_sf36_path %>

@@ -1,0 +1,51 @@
+<h1>Listing anamnezas</h1>
+
+<table>
+  <tr>
+    <th>Fumator</th>
+    <th>Etanol</th>
+    <th>Ima</th>
+    <th>Angina</th>
+    <th>Icc</th>
+    <th>Avc</th>
+    <th>Aomi</th>
+    <th>Amputatii</th>
+    <th>Bpoc</th>
+    <th>Hepatopatii</th>
+    <th>Neoplasm</th>
+    <th>Retinopatie</th>
+    <th>Spitalizare</th>
+    <th>Cod spitalizare</th>
+    <th>Pacient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @anamnezas.each do |anamneza| %>
+  <tr>
+    <td><%= anamneza.fumator %></td>
+    <td><%= anamneza.etanol %></td>
+    <td><%= anamneza.ima %></td>
+    <td><%= anamneza.angina %></td>
+    <td><%= anamneza.icc %></td>
+    <td><%= anamneza.avc %></td>
+    <td><%= anamneza.aomi %></td>
+    <td><%= anamneza.amputatii %></td>
+    <td><%= anamneza.bpoc %></td>
+    <td><%= anamneza.hepatopatii %></td>
+    <td><%= anamneza.neoplasm %></td>
+    <td><%= anamneza.retinopatie %></td>
+    <td><%= anamneza.spitalizare %></td>
+    <td><%= anamneza.cod_spitalizare %></td>
+    <td><%= anamneza.pacient %></td>
+    <td><%= link_to 'Show', anamneza %></td>
+    <td><%= link_to 'Edit', edit_anamneza_path(anamneza) %></td>
+    <td><%= link_to 'Destroy', anamneza, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Anamneza', new_anamneza_path %>

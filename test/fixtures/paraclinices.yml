@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  hemoglobina: 
+  hematocrit: 
+  pcr: 
+  glicemie: 
+  hba1c: 
+  colesterol_total: 
+  hdl_colesterol: 
+  trigliceride: 
+  albumina: 
+  tsat: 
+  feritina: 
+  calcemie: 
+  fosfatemie: 
+  fosfataza_alcalina: 
+  pth: 
+  ph: 
+  pco2: 
+  hco3: 
+  sodiu: 
+  potasiu: 
+  clor: 
+  creatinina: 
+  uree: 
+  uree_urinara: 
+  albumina_urinara_spot: 
+  creatinina_urinara: 
+  data: 2011-10-16
+  pacient: 
+
+two:
+  hemoglobina: 
+  hematocrit: 
+  pcr: 
+  glicemie: 
+  hba1c: 
+  colesterol_total: 
+  hdl_colesterol: 
+  trigliceride: 
+  albumina: 
+  tsat: 
+  feritina: 
+  calcemie: 
+  fosfatemie: 
+  fosfataza_alcalina: 
+  pth: 
+  ph: 
+  pco2: 
+  hco3: 
+  sodiu: 
+  potasiu: 
+  clor: 
+  creatinina: 
+  uree: 
+  uree_urinara: 
+  albumina_urinara_spot: 
+  creatinina_urinara: 
+  data: 2011-10-16
+  pacient: 

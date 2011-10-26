@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  pacient: 
+  data: 2011-10-16
+  modificari_greutate: 1
+  modificari_aport_alimentar: 1
+  simptome_gi: 1
+  capacitate_functionala: 1
+  comorbiditatea: 1
+  grasime: 1
+  amiotrofie: 1
+  imc: 1
+  pcr: 1
+  feritina: 1
+  albumina: 1
+
+two:
+  pacient: 
+  data: 2011-10-16
+  modificari_greutate: 1
+  modificari_aport_alimentar: 1
+  simptome_gi: 1
+  capacitate_functionala: 1
+  comorbiditatea: 1
+  grasime: 1
+  amiotrofie: 1
+  imc: 1
+  pcr: 1
+  feritina: 1
+  albumina: 1

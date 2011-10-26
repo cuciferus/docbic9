@@ -1,0 +1,69 @@
+<%= form_for(@sga) do |f| %>
+  <% if @sga.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sga.errors.count, "error") %> prohibited this sga from being saved:</h2>
+
+      <ul>
+      <% @sga.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pacient %><br />
+    <%= f.text_field :pacient %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.date_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :modificari_greutate %><br />
+    <%= f.number_field :modificari_greutate %>
+  </div>
+  <div class="field">
+    <%= f.label :modificari_aport_alimentar %><br />
+    <%= f.number_field :modificari_aport_alimentar %>
+  </div>
+  <div class="field">
+    <%= f.label :simptome_gi %><br />
+    <%= f.number_field :simptome_gi %>
+  </div>
+  <div class="field">
+    <%= f.label :capacitate_functionala %><br />
+    <%= f.number_field :capacitate_functionala %>
+  </div>
+  <div class="field">
+    <%= f.label :comorbiditatea %><br />
+    <%= f.number_field :comorbiditatea %>
+  </div>
+  <div class="field">
+    <%= f.label :grasime %><br />
+    <%= f.number_field :grasime %>
+  </div>
+  <div class="field">
+    <%= f.label :amiotrofie %><br />
+    <%= f.number_field :amiotrofie %>
+  </div>
+  <div class="field">
+    <%= f.label :imc %><br />
+    <%= f.number_field :imc %>
+  </div>
+  <div class="field">
+    <%= f.label :pcr %><br />
+    <%= f.number_field :pcr %>
+  </div>
+  <div class="field">
+    <%= f.label :feritina %><br />
+    <%= f.number_field :feritina %>
+  </div>
+  <div class="field">
+    <%= f.label :albumina %><br />
+    <%= f.number_field :albumina %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

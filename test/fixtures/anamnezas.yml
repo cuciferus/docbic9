@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fumator: 
+  etanol: 1
+  ima: false
+  angina: false
+  icc: 
+  avc: false
+  aomi: false
+  amputatii: false
+  bpoc: false
+  hepatopatii: MyString
+  neoplasm: 
+  retinopatie: false
+  spitalizare: 1
+  cod_spitalizare: MyString
+  pacient: 
+
+two:
+  fumator: 
+  etanol: 1
+  ima: false
+  angina: false
+  icc: 
+  avc: false
+  aomi: false
+  amputatii: false
+  bpoc: false
+  hepatopatii: MyString
+  neoplasm: 
+  retinopatie: false
+  spitalizare: 1
+  cod_spitalizare: MyString
+  pacient: 

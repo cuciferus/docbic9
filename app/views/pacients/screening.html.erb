@@ -1,0 +1,40 @@
+<%= javascript_include_tag "includere" %>
+<%= stylesheet_link_tag "includere" %>
+<h2> Formularul de screening pentru <%= @pacient.nume %></h2><br />
+<%= simple_form_for @pacient, :remote => true do |f| %>
+
+<h3> Date paraclinice </h3>
+<%= f.simple_fields_for :paraclinices, @pacient.paraclinices.build(:tip_vizita => "screening") do |paraclinics| %>
+  <%= paraclinics.input :data%>
+  <%= paraclinics.input :creatinina %>
+  <%= paraclinics.input :uree %>
+  <%= paraclinics.input :albumina_urinara_spot %>
+  <%= paraclinics.input :creatinina_urinara %>
+  <%= paraclinics.input :hco3, :label => "Bicarbonat seric" %>
+  <%= paraclinics.input :hba1c, :label => "Hemoglobina glicozilata" %>
+<% end %>
+<h3> Date anamnestice </h2>
+<%= f.simple_fields_for :anamnezas, @pacient.anamnezas.build(:tip_vizita => "screening") do |anamneza| %>
+  <%= anamneza.input :neoplasm , :label => "Dacă pacientul e diagnosticat cu neoplasm precizaţi locaţia"%>
+<% end %>
+<h3> Scor SGA </h3>
+<%= f.simple_fields_for :sgas, @pacient.sgas.build(:tip_vizita => "screening") do |sga| %>
+  <%= sga.input :modificari_greutate, :collection => [["Fără modificări",0], ["Scădere <5%",1,],["Scădere 5-10%",2],["Scădere 10-15%",3],["Peste 15%",4 ]], :label_method =>:first, :value_method => :last , :hint => "\texplicaţie" %>
+  <%= sga.input :modificari_aport_alimentar, :collection => [["Fără modificări",0], ["Aport suboptimal",1], ["Scădere globală moderată",2], ["Dietă lichidiană",3], ["Înfometare",4]], :label_method => :first, :value_mathod => :last  %>
+  <%= sga.input :simptome_gi, :collection => [["Fără simptome",0], ["Greţuri",1], ["Vărsături sau simptome GI moderate",2], ["Diaree/vărsături frecvente",3], ["Anorexie",4]], :label_method => :first, :value_method => :last  %>
+  <%= sga.input :capacitate_functionala, :collection => [["Bună",0], ["Dificultăţi la mers",1], ["Dificultăţi de menaj",2], ["Dificultăţi la eforturi minime",3], ["Imobilizare la pat/fotoliu",4]], :label_method => :first, :value_method => :last  %>
+  <p> Legată de statusul nutriţional </p>
+  <%= sga.input :comorbiditatea, :collection => [["Fără comorbidităţi",0], ["Comorbidităţi usoare/neasociate cu BRC",1], ["Comorbidităţi moderate",2], ["O comorbiditate majora",3], ["mai multe comorbidităţi majore",4]], :label_method => :first, :value_method => :last  %>
+  <p> trebuie pusă explicaţia sga la indemână </p>
+  <%= sga.input :grasime, :collection => [["Fără modificări",0], ["Minimă",1], ["Moderată",2], ["Severă",3]] , :label_method => :first, :value_method => :last  %>
+  <%= sga.input :amiotrofie, :collection => [["Fără modificări",0], ["Minimă",1], ["Moderată",2], ["Severe",3]], :label_method => :first, :value_method => :last %>
+  <%= sga.input :imc, :collection => [["peste 24",0], ["20-23,9",1], ["18-19,9",2],["16-17,9",3], ["sub 16",4]], :label_method => :first, :value_method => :last  %>
+  <%= sga.input :pcr, :collection => [["sub 1",0],["1-5",1], ["5,1-10",2],["10,1-25",3],["<25",4]], :label_method => :first, :value_method => :last, :hint => "mg/dL"  %>
+  <%= sga.input :feritina, :collection => [["200-400",0],["400-600",1], ["600-800",2], ["800-1200",3], [">1200",4]], :label_method => :first, :value_method => :last, :hint =>"în cazul terapiei cu Fe IV pacientul e trecut in clasă inferioară"  %>
+  <%= sga.input :albumina, :collection => [[">4",0],["3,5-3,9",1],["3-3,4",2],["2,5-3",3],["<2",4]], :label_method => :first, :value_method => :last , :label => "Albumină serică" %>
+<% end %>
+<%= f.input :inclus, :label => "Bifează dacă a semnat inform consentu" %>
+<p> Poate ar trebui uploadat inform consentu scanat? </p>
+<%= f.submit "Adauga" %>
+<% end %>
+

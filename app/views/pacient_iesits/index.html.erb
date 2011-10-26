@@ -1,0 +1,27 @@
+<h1>Listing pacient_iesits</h1>
+
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Motiv</th>
+    <th>Pacient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pacient_iesits.each do |pacient_iesit| %>
+  <tr>
+    <td><%= pacient_iesit.data %></td>
+    <td><%= pacient_iesit.motiv %></td>
+    <td><%= pacient_iesit.pacient %></td>
+    <td><%= link_to 'Show', pacient_iesit %></td>
+    <td><%= link_to 'Edit', edit_pacient_iesit_path(pacient_iesit) %></td>
+    <td><%= link_to 'Destroy', pacient_iesit, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pacient iesit', new_pacient_iesit_path %>

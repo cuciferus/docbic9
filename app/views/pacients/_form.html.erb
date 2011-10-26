@@ -1,0 +1,52 @@
+<%= form_for(@pacient) do |f| %>
+  <% if @pacient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pacient.errors.count, "error") %> prohibited this pacient from being saved:</h2>
+
+      <ul>
+      <% @pacient.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nume %>
+    <%= f.text_field :nume %>
+  </div>
+  <div class="field">
+    <%= f.label :prenume %>
+    <%= f.text_field :prenume %>
+  </div>
+  <div class="field">
+    <%= f.label :cnp %>
+    <%= f.number_field :cnp %>
+  </div>
+  <div class="field">
+    <%= f.label :telefon1 %>
+    <%= f.number_field :telefon1 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefon2 %>
+    <%= f.number_field :telefon2 %>
+  </div>
+  <div class="field">
+    <%= f.label :adresa %><br />
+    <%= f.text_area :adresa %>
+  </div>
+  <div class="field">
+    <%= f.label :data_dg_ckd %>
+    <%= f.date_select :data_dg_ckd %>
+  </div>
+  <div class="field">
+    <%= f.label :data_dg_diabet %>
+    <%= f.date_select :data_dg_diabet %>
+  </div>
+  <div class="field">
+    <%= f.label :centru %>
+    <%= f.select :centru, Pacient::CENTRE %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

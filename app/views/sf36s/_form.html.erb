@@ -1,0 +1,169 @@
+<%= form_for(@sf36) do |f| %>
+  <% if @sf36.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sf36.errors.count, "error") %> prohibited this sf36 from being saved:</h2>
+
+      <ul>
+      <% @sf36.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pacient %><br />
+    <%= f.text_field :pacient %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.date_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :sanatatea %><br />
+    <%= f.number_field :sanatatea %>
+  </div>
+  <div class="field">
+    <%= f.label :sanatatea_comparativ %><br />
+    <%= f.number_field :sanatatea_comparativ %>
+  </div>
+  <div class="field">
+    <%= f.label :activitati_obositoare %><br />
+    <%= f.number_field :activitati_obositoare %>
+  </div>
+  <div class="field">
+    <%= f.label :activitati_moderate %><br />
+    <%= f.number_field :activitati_moderate %>
+  </div>
+  <div class="field">
+    <%= f.label :ridicat %><br />
+    <%= f.number_field :ridicat %>
+  </div>
+  <div class="field">
+    <%= f.label :urcat_etaje %><br />
+    <%= f.number_field :urcat_etaje %>
+  </div>
+  <div class="field">
+    <%= f.label :urcat_etaj %><br />
+    <%= f.number_field :urcat_etaj %>
+  </div>
+  <div class="field">
+    <%= f.label :aplecat %><br />
+    <%= f.number_field :aplecat %>
+  </div>
+  <div class="field">
+    <%= f.label :km1 %><br />
+    <%= f.number_field :km1 %>
+  </div>
+  <div class="field">
+    <%= f.label :sute_metri %><br />
+    <%= f.number_field :sute_metri %>
+  </div>
+  <div class="field">
+    <%= f.label :o_suta_metri %><br />
+    <%= f.number_field :o_suta_metri %>
+  </div>
+  <div class="field">
+    <%= f.label :imbaiere %><br />
+    <%= f.number_field :imbaiere %>
+  </div>
+  <div class="field">
+    <%= f.label :perioada_timp %><br />
+    <%= f.check_box :perioada_timp %>
+  </div>
+  <div class="field">
+    <%= f.label :mai_putine %><br />
+    <%= f.check_box :mai_putine %>
+  </div>
+  <div class="field">
+    <%= f.label :limitat %><br />
+    <%= f.check_box :limitat %>
+  </div>
+  <div class="field">
+    <%= f.label :dificultati %><br />
+    <%= f.check_box :dificultati %>
+  </div>
+  <div class="field">
+    <%= f.label :perioada_emotionale %><br />
+    <%= f.check_box :perioada_emotionale %>
+  </div>
+  <div class="field">
+    <%= f.label :mai_putine_emotionale %><br />
+    <%= f.check_box :mai_putine_emotionale %>
+  </div>
+  <div class="field">
+    <%= f.label :grija %><br />
+    <%= f.check_box :grija %>
+  </div>
+  <div class="field">
+    <%= f.label :familie %><br />
+    <%= f.number_field :familie %>
+  </div>
+  <div class="field">
+    <%= f.label :dureri %><br />
+    <%= f.number_field :dureri %>
+  </div>
+  <div class="field">
+    <%= f.label :durerea %><br />
+    <%= f.number_field :durerea %>
+  </div>
+  <div class="field">
+    <%= f.label :plin_viata %><br />
+    <%= f.number_field :plin_viata %>
+  </div>
+  <div class="field">
+    <%= f.label :nervos %><br />
+    <%= f.number_field :nervos %>
+  </div>
+  <div class="field">
+    <%= f.label :deprimat %><br />
+    <%= f.number_field :deprimat %>
+  </div>
+  <div class="field">
+    <%= f.label :calm %><br />
+    <%= f.number_field :calm %>
+  </div>
+  <div class="field">
+    <%= f.label :energie %><br />
+    <%= f.number_field :energie %>
+  </div>
+  <div class="field">
+    <%= f.label :descurajat %><br />
+    <%= f.number_field :descurajat %>
+  </div>
+  <div class="field">
+    <%= f.label :extenuat %><br />
+    <%= f.number_field :extenuat %>
+  </div>
+  <div class="field">
+    <%= f.label :fericit %><br />
+    <%= f.number_field :fericit %>
+  </div>
+  <div class="field">
+    <%= f.label :obosit %><br />
+    <%= f.number_field :obosit %>
+  </div>
+  <div class="field">
+    <%= f.label :vizite %><br />
+    <%= f.number_field :vizite %>
+  </div>
+  <div class="field">
+    <%= f.label :imbolnavesc %><br />
+    <%= f.number_field :imbolnavesc %>
+  </div>
+  <div class="field">
+    <%= f.label :la_fel %><br />
+    <%= f.number_field :la_fel %>
+  </div>
+  <div class="field">
+    <%= f.label :inrautateasca %><br />
+    <%= f.number_field :inrautateasca %>
+  </div>
+  <div class="field">
+    <%= f.label :sanatate_excelenta %><br />
+    <%= f.number_field :sanatate_excelenta %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

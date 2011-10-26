@@ -1,0 +1,41 @@
+<h1>Listing clinics</h1>
+
+<table>
+  <tr>
+    <th>Inaltime</th>
+    <th>Greutate</th>
+    <th>Tas</th>
+    <th>Tad</th>
+    <th>Circumferinta abdomen</th>
+    <th>Circumferinta brat</th>
+    <th>Pliu cutantat brat</th>
+    <th>Forta de strangere mana</th>
+    <th>Data</th>
+    <th>Pacient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clinics.each do |clinic| %>
+  <tr>
+    <td><%= clinic.inaltime %></td>
+    <td><%= clinic.greutate %></td>
+    <td><%= clinic.tas %></td>
+    <td><%= clinic.tad %></td>
+    <td><%= clinic.circumferinta_abdomen %></td>
+    <td><%= clinic.circumferinta_brat %></td>
+    <td><%= clinic.pliu_cutantat_brat %></td>
+    <td><%= clinic.forta_de_strangere_mana %></td>
+    <td><%= clinic.data %></td>
+    <td><%= clinic.pacient %></td>
+    <td><%= link_to 'Show', clinic %></td>
+    <td><%= link_to 'Edit', edit_clinic_path(clinic) %></td>
+    <td><%= link_to 'Destroy', clinic, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Clinic', new_clinic_path %>

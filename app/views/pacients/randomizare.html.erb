@@ -1,0 +1,65 @@
+<h2> Formularul de randomizare pentru <%= @pacient.nume %></h2><br />
+<%= simple_form_for ([@pacient, @anamneza]), :html => {:multipart => true} do |f| %>
+  <% f.error_notification %>
+  <div class="field">
+    <%= f.input :data, :label => "Data examinării" %>
+  </div>
+  <h3> Date anamnestice </h3>
+<div class="field">
+    <%= f.label "Fumători: Câte pachete/an" %>
+    <%= f.text_field :fumator %>
+  </div>
+  <div class="field">
+    <%= f.label "Consum etanol" %>
+    <%= f.number_field :etanol, :label => "Băuturi/zi" %>
+  </div>
+  <div class="field">
+    <%= f.label "Bifează dacă pacientul a suferit infarct miocardic in antecedente" %>
+    <%= f.check_box :ima %>
+  </div>
+  <div class="field">
+    <%= f.label "Bifează dacă pacientul suferă de angină pectorală" %>
+    <%= f.check_box :angina %>
+  </div>
+  <div class="field">
+    <%= f.input :icc , :collection => ["fară", "NYHA I", "NYHA II", "NYHA III", "NYHA IV"], :label => "Dacă pacientul are insuficienţă cardiacă alegeţi clasa NYHA"%>
+  </div>
+  <div class="field">
+    <%= f.label "Bifaţi dacă pacientul a avut AVC în antecedente" %>
+    <%= f.check_box :avc %>
+  </div>
+  <div class="field">
+    <%= f.label "Bifaţi dacă pacientul a fost diagnosticat cu arteriopatie obliterantă" %>
+    <%= f.check_box :aomi %>
+  </div>
+  <div class="field">
+    <%= f.label "Bifaţi dacă pacientul a suferit amputaţii" %>
+    <%= f.check_box :amputatii %>
+  </div>
+  <div class="field">
+    <%= f.label "Bifaţi dacă pacientul a fost diagnosticat cu BPOC" %>
+    <%= f.check_box :bpoc %>
+  </div>
+  <div class="field">
+    <%= f.input :hepatopatii , :collection => ["Fără", "Hepatita virala B", "Hepatita virala C", "Hepatita non-virala"], :label => "Dacă pacientul are suferinţă hepatică vă rog alegeţi forma"%>
+  </div>
+  <div class="field">
+    <%= f.label "Dacă pacientul a fost diagnosticat cu neoplasm precizaţi localizarea" %>
+    <%= f.text_field :neoplasm %>
+  </div>
+  <div class="field">
+    <%= f.label "Bifaţi dacă pacientul a fost diagnosticat cu retinopatie" %>
+    <%= f.check_box :retinopatie %>
+  </div>
+<% end %>
+<h3> Date clinice </h3>
+    <%= simple_form_for ([@pacient, @clinic]),:html=>{:multipart =>true} do |f| %>
+      <%= f.input :inaltime, :label => "Înălţimea pacientului in cm" %>
+      <%= f.input :greutate, :label => "Greutatea pacientului in kg" %>
+      <%= f.input :tas, :label => "Tensiunea arterială sistolică a pacientului" %>
+      <%= f.input :tad, :label => "Tensiunea arterială diastolică a pacientului" %>
+      <%= f.input :circumferinta_abdomen, :label => "Circumferinţa abdomenului in cm" %>
+      <%= f.input :circumferinta_brat, :label => "Circumferinţa braţului in cm " %>
+      <%= f.input :pliu_cutantat_brat, :label =>"Pliul cutanat al braţului in cm măsurat cu caliperul" %>
+      <%= f.input :forta_de_strangere_mana, :label =>"Forţa de strângere a pumnului" %>
+    <% end %>

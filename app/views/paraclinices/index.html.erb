@@ -1,0 +1,77 @@
+<h1>Listing paraclinices</h1>
+
+<table>
+  <tr>
+    <th>Hemoglobina</th>
+    <th>Hematocrit</th>
+    <th>Pcr</th>
+    <th>Glicemie</th>
+    <th>Hba1c</th>
+    <th>Colesterol total</th>
+    <th>Hdl colesterol</th>
+    <th>Trigliceride</th>
+    <th>Albumina</th>
+    <th>Tsat</th>
+    <th>Feritina</th>
+    <th>Calcemie</th>
+    <th>Fosfatemie</th>
+    <th>Fosfataza alcalina</th>
+    <th>Pth</th>
+    <th>Ph</th>
+    <th>Pco2</th>
+    <th>Hco3</th>
+    <th>Sodiu</th>
+    <th>Potasiu</th>
+    <th>Clor</th>
+    <th>Creatinina</th>
+    <th>Uree</th>
+    <th>Uree urinara</th>
+    <th>Albumina urinara spot</th>
+    <th>Creatinina urinara</th>
+    <th>Data</th>
+    <th>Pacient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @paraclinices.each do |paraclinice| %>
+  <tr>
+    <td><%= paraclinice.hemoglobina %></td>
+    <td><%= paraclinice.hematocrit %></td>
+    <td><%= paraclinice.pcr %></td>
+    <td><%= paraclinice.glicemie %></td>
+    <td><%= paraclinice.hba1c %></td>
+    <td><%= paraclinice.colesterol_total %></td>
+    <td><%= paraclinice.hdl_colesterol %></td>
+    <td><%= paraclinice.trigliceride %></td>
+    <td><%= paraclinice.albumina %></td>
+    <td><%= paraclinice.tsat %></td>
+    <td><%= paraclinice.feritina %></td>
+    <td><%= paraclinice.calcemie %></td>
+    <td><%= paraclinice.fosfatemie %></td>
+    <td><%= paraclinice.fosfataza_alcalina %></td>
+    <td><%= paraclinice.pth %></td>
+    <td><%= paraclinice.ph %></td>
+    <td><%= paraclinice.pco2 %></td>
+    <td><%= paraclinice.hco3 %></td>
+    <td><%= paraclinice.sodiu %></td>
+    <td><%= paraclinice.potasiu %></td>
+    <td><%= paraclinice.clor %></td>
+    <td><%= paraclinice.creatinina %></td>
+    <td><%= paraclinice.uree %></td>
+    <td><%= paraclinice.uree_urinara %></td>
+    <td><%= paraclinice.albumina_urinara_spot %></td>
+    <td><%= paraclinice.creatinina_urinara %></td>
+    <td><%= paraclinice.data %></td>
+    <td><%= paraclinice.pacient %></td>
+    <td><%= link_to 'Show', paraclinice %></td>
+    <td><%= link_to 'Edit', edit_paraclinice_path(paraclinice) %></td>
+    <td><%= link_to 'Destroy', paraclinice, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Paraclinice', new_paraclinice_path %>

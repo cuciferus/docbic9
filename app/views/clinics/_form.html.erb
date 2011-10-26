@@ -1,0 +1,57 @@
+<%= form_for(@clinic) do |f| %>
+  <% if @clinic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clinic.errors.count, "error") %> prohibited this clinic from being saved:</h2>
+
+      <ul>
+      <% @clinic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :inaltime %><br />
+    <%= f.text_field :inaltime %>
+  </div>
+  <div class="field">
+    <%= f.label :greutate %><br />
+    <%= f.text_field :greutate %>
+  </div>
+  <div class="field">
+    <%= f.label :tas %><br />
+    <%= f.text_field :tas %>
+  </div>
+  <div class="field">
+    <%= f.label :tad %><br />
+    <%= f.text_field :tad %>
+  </div>
+  <div class="field">
+    <%= f.label :circumferinta_abdomen %><br />
+    <%= f.text_field :circumferinta_abdomen %>
+  </div>
+  <div class="field">
+    <%= f.label :circumferinta_brat %><br />
+    <%= f.text_field :circumferinta_brat %>
+  </div>
+  <div class="field">
+    <%= f.label :pliu_cutantat_brat %><br />
+    <%= f.text_field :pliu_cutantat_brat %>
+  </div>
+  <div class="field">
+    <%= f.label :forta_de_strangere_mana %><br />
+    <%= f.text_field :forta_de_strangere_mana %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.date_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :pacient %><br />
+    <%= f.text_field :pacient %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

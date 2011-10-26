@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  insulina: 1
+  tip_fier: MyString
+  doza_fier: 1
+  tip_ase: MyString
+  doza_ase: 1
+  beta_blocante: false
+  ras: false
+  diuretice: false
+  vasodilatatoare: false
+  data: 2011-10-16
+  pacient: 
+
+two:
+  insulina: 1
+  tip_fier: MyString
+  doza_fier: 1
+  tip_ase: MyString
+  doza_ase: 1
+  beta_blocante: false
+  ras: false
+  diuretice: false
+  vasodilatatoare: false
+  data: 2011-10-16
+  pacient: 

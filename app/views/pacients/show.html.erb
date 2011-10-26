@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nume:</b>
+  <%= @pacient.nume %>
+</p>
+
+<p>
+  <b>Prenume:</b>
+  <%= @pacient.prenume %>
+</p>
+
+<p>
+  <b>Cnp:</b>
+  <%= @pacient.cnp %>
+</p>
+
+<p>
+  <b>Telefon1:</b>
+  <%= @pacient.telefon1 %>
+</p>
+
+<p>
+  <b>Telefon2:</b>
+  <%= @pacient.telefon2 %>
+</p>
+
+<p>
+  <b>Adresa:</b>
+  <%= @pacient.adresa %>
+</p>
+
+<p>
+  <b>Data dg ckd:</b>
+  <%= @pacient.data_dg_ckd %>
+</p>
+
+<p>
+  <b>Data dg diabet:</b>
+  <%= @pacient.data_dg_diabet %>
+</p>
+<h3> Navigare </h3>
+<%= link_to 'Edit', edit_pacient_path(@pacient) %> |
+<%= link_to 'Back', pacients_path %>
+<h3> Acţiuni </h3>
+<%= link_to 'Printează un inform consent pentru pacient' %><br />
+<%= link_to 'Includere', :controller => "pacients", :action => "includere" %>|
+<%= link_to 'Screening', :controller => "pacients", :action => "screening" %>|
+<%= link_to 'Vizita 1' %>

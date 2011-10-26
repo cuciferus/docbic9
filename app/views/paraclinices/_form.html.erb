@@ -1,0 +1,129 @@
+<%= form_for(@paraclinice) do |f| %>
+  <% if @paraclinice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paraclinice.errors.count, "error") %> prohibited this paraclinice from being saved:</h2>
+
+      <ul>
+      <% @paraclinice.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hemoglobina %><br />
+    <%= f.text_field :hemoglobina %>
+  </div>
+  <div class="field">
+    <%= f.label :hematocrit %><br />
+    <%= f.text_field :hematocrit %>
+  </div>
+  <div class="field">
+    <%= f.label :pcr %><br />
+    <%= f.text_field :pcr %>
+  </div>
+  <div class="field">
+    <%= f.label :glicemie %><br />
+    <%= f.text_field :glicemie %>
+  </div>
+  <div class="field">
+    <%= f.label :hba1c %><br />
+    <%= f.text_field :hba1c %>
+  </div>
+  <div class="field">
+    <%= f.label :colesterol_total %><br />
+    <%= f.text_field :colesterol_total %>
+  </div>
+  <div class="field">
+    <%= f.label :hdl_colesterol %><br />
+    <%= f.text_field :hdl_colesterol %>
+  </div>
+  <div class="field">
+    <%= f.label :trigliceride %><br />
+    <%= f.text_field :trigliceride %>
+  </div>
+  <div class="field">
+    <%= f.label :albumina %><br />
+    <%= f.text_field :albumina %>
+  </div>
+  <div class="field">
+    <%= f.label :tsat %><br />
+    <%= f.text_field :tsat %>
+  </div>
+  <div class="field">
+    <%= f.label :feritina %><br />
+    <%= f.text_field :feritina %>
+  </div>
+  <div class="field">
+    <%= f.label :calcemie %><br />
+    <%= f.text_field :calcemie %>
+  </div>
+  <div class="field">
+    <%= f.label :fosfatemie %><br />
+    <%= f.text_field :fosfatemie %>
+  </div>
+  <div class="field">
+    <%= f.label :fosfataza_alcalina %><br />
+    <%= f.text_field :fosfataza_alcalina %>
+  </div>
+  <div class="field">
+    <%= f.label :pth %><br />
+    <%= f.text_field :pth %>
+  </div>
+  <div class="field">
+    <%= f.label :ph %><br />
+    <%= f.text_field :ph %>
+  </div>
+  <div class="field">
+    <%= f.label :pco2 %><br />
+    <%= f.text_field :pco2 %>
+  </div>
+  <div class="field">
+    <%= f.label :hco3 %><br />
+    <%= f.text_field :hco3 %>
+  </div>
+  <div class="field">
+    <%= f.label :sodiu %><br />
+    <%= f.text_field :sodiu %>
+  </div>
+  <div class="field">
+    <%= f.label :potasiu %><br />
+    <%= f.text_field :potasiu %>
+  </div>
+  <div class="field">
+    <%= f.label :clor %><br />
+    <%= f.text_field :clor %>
+  </div>
+  <div class="field">
+    <%= f.label :creatinina %><br />
+    <%= f.text_field :creatinina %>
+  </div>
+  <div class="field">
+    <%= f.label :uree %><br />
+    <%= f.text_field :uree %>
+  </div>
+  <div class="field">
+    <%= f.label :uree_urinara %><br />
+    <%= f.text_field :uree_urinara %>
+  </div>
+  <div class="field">
+    <%= f.label :albumina_urinara_spot %><br />
+    <%= f.text_field :albumina_urinara_spot %>
+  </div>
+  <div class="field">
+    <%= f.label :creatinina_urinara %><br />
+    <%= f.text_field :creatinina_urinara %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.date_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :pacient %><br />
+    <%= f.text_field :pacient %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

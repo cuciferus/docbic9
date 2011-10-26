@@ -1,0 +1,43 @@
+<h1>Listing medicamentes</h1>
+
+<table>
+  <tr>
+    <th>Insulina</th>
+    <th>Tip fier</th>
+    <th>Doza fier</th>
+    <th>Tip ase</th>
+    <th>Doza ase</th>
+    <th>Beta blocante</th>
+    <th>Ras</th>
+    <th>Diuretice</th>
+    <th>Vasodilatatoare</th>
+    <th>Data</th>
+    <th>Pacient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @medicamentes.each do |medicamente| %>
+  <tr>
+    <td><%= medicamente.insulina %></td>
+    <td><%= medicamente.tip_fier %></td>
+    <td><%= medicamente.doza_fier %></td>
+    <td><%= medicamente.tip_ase %></td>
+    <td><%= medicamente.doza_ase %></td>
+    <td><%= medicamente.beta_blocante %></td>
+    <td><%= medicamente.ras %></td>
+    <td><%= medicamente.diuretice %></td>
+    <td><%= medicamente.vasodilatatoare %></td>
+    <td><%= medicamente.data %></td>
+    <td><%= medicamente.pacient %></td>
+    <td><%= link_to 'Show', medicamente %></td>
+    <td><%= link_to 'Edit', edit_medicamente_path(medicamente) %></td>
+    <td><%= link_to 'Destroy', medicamente, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Medicamente', new_medicamente_path %>

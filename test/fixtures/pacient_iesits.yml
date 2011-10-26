@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  data: 2011-10-15
+  motiv: MyString
+  pacient: 
+
+two:
+  data: 2011-10-15
+  motiv: MyString
+  pacient: 

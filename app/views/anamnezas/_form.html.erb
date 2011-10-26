@@ -1,0 +1,77 @@
+<%= form_for(@anamneza) do |f| %>
+  <% if @anamneza.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@anamneza.errors.count, "error") %> prohibited this anamneza from being saved:</h2>
+
+      <ul>
+      <% @anamneza.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fumator %><br />
+    <%= f.text_field :fumator %>
+  </div>
+  <div class="field">
+    <%= f.label :etanol %><br />
+    <%= f.number_field :etanol %>
+  </div>
+  <div class="field">
+    <%= f.label :ima %><br />
+    <%= f.check_box :ima %>
+  </div>
+  <div class="field">
+    <%= f.label :angina %><br />
+    <%= f.check_box :angina %>
+  </div>
+  <div class="field">
+    <%= f.label :icc %><br />
+    <%= f.text_field :icc %>
+  </div>
+  <div class="field">
+    <%= f.label :avc %><br />
+    <%= f.check_box :avc %>
+  </div>
+  <div class="field">
+    <%= f.label :aomi %><br />
+    <%= f.check_box :aomi %>
+  </div>
+  <div class="field">
+    <%= f.label :amputatii %><br />
+    <%= f.check_box :amputatii %>
+  </div>
+  <div class="field">
+    <%= f.label :bpoc %><br />
+    <%= f.check_box :bpoc %>
+  </div>
+  <div class="field">
+    <%= f.label :hepatopatii %><br />
+    <%= f.text_field :hepatopatii %>
+  </div>
+  <div class="field">
+    <%= f.label :neoplasm %><br />
+    <%= f.text_field :neoplasm %>
+  </div>
+  <div class="field">
+    <%= f.label :retinopatie %><br />
+    <%= f.check_box :retinopatie %>
+  </div>
+  <div class="field">
+    <%= f.label :spitalizare %><br />
+    <%= f.number_field :spitalizare %>
+  </div>
+  <div class="field">
+    <%= f.label :cod_spitalizare %><br />
+    <%= f.text_field :cod_spitalizare %>
+  </div>
+  <div class="field">
+    <%= f.label :pacient %><br />
+    <%= f.text_field :pacient %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

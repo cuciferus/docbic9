@@ -1,0 +1,61 @@
+<%= form_for(@medicamente) do |f| %>
+  <% if @medicamente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@medicamente.errors.count, "error") %> prohibited this medicamente from being saved:</h2>
+
+      <ul>
+      <% @medicamente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :insulina %><br />
+    <%= f.number_field :insulina %>
+  </div>
+  <div class="field">
+    <%= f.label :tip_fier %><br />
+    <%= f.text_field :tip_fier %>
+  </div>
+  <div class="field">
+    <%= f.label :doza_fier %><br />
+    <%= f.number_field :doza_fier %>
+  </div>
+  <div class="field">
+    <%= f.label :tip_ase %><br />
+    <%= f.text_field :tip_ase %>
+  </div>
+  <div class="field">
+    <%= f.label :doza_ase %><br />
+    <%= f.number_field :doza_ase %>
+  </div>
+  <div class="field">
+    <%= f.label :beta_blocante %><br />
+    <%= f.check_box :beta_blocante %>
+  </div>
+  <div class="field">
+    <%= f.label :ras %><br />
+    <%= f.check_box :ras %>
+  </div>
+  <div class="field">
+    <%= f.label :diuretice %><br />
+    <%= f.check_box :diuretice %>
+  </div>
+  <div class="field">
+    <%= f.label :vasodilatatoare %><br />
+    <%= f.check_box :vasodilatatoare %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.date_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :pacient %><br />
+    <%= f.text_field :pacient %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
