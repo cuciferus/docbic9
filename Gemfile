@@ -34,3 +34,8 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+group :production do
+  #pentru heroku
+  gem 'theubyracer-heroku'
+  gem 'pg'
+end
