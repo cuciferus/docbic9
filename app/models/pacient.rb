@@ -1,4 +1,5 @@
 class Pacient < ActiveRecord::Base
+  self.per_page = 5
   CENTRE = ["Paulescu", "Davila"]
   has_many :anamnezas
   has_many :clinics

@@ -8,6 +8,7 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'therubyracer'
 gem 'simple_form'
+gem 'will_paginate', '~> 3.0.2'
 gem 'inherited_resources'
 
 
