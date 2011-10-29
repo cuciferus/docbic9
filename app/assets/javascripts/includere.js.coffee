@@ -13,7 +13,8 @@ $(document).ready ->
 	  an=19+ an_nastere
 	  anu = (Number) an
 	  varsta = (new Date).getFullYear() - anu
-	  alert varsta - anu
+	  creatinina = $("#pacient_paraclinices_attributes_0_creatinina").val()
+	  alert creatinina
 	$('.submit_me').click ->
 	  alert 'salut'
 	  return false
