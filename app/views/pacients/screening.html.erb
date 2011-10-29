@@ -1,13 +1,14 @@
 <%= javascript_include_tag "includere" %>
 <%= stylesheet_link_tag "includere" %>
-<h2> Formularul de screening pentru <%= @pacient.nume %></h2><br />
+<h2> Formularul de screening pentru <%= @pacient.nume %></h2>
+<h3> cu CNP <div id="cnp" span><%= @pacient.cnp %></span></div> </h3><br />
 <%= simple_form_for @pacient, :remote => true do |f| %>
 
 <h3> Date paraclinice </h3>
 <div class="inputs">
 <%= f.simple_fields_for :paraclinices, @pacient.paraclinices.build(:tip_vizita => "screening") do |paraclinics| %>
   <%= paraclinics.input :data, :label => "Data screeningului" %>
-  <%= paraclinics.input :creatinina %>
+  <%= paraclinics.input :creatinina , :hint => '<div id="egfr" span> Calculează eGFR</span></div>'.html_safe %>
   <%= paraclinics.input :uree %>
   <%= paraclinics.input :albumina_urinara_spot %>
   <%= paraclinics.input :creatinina_urinara %>
@@ -42,5 +43,6 @@
 <div id="commit">
 <%= f.submit "Adauga" %>
 </div>
+<%= link_to 'Adaugă', '#', :class => 'submit_me' %>
 <% end %>
 

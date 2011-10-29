@@ -19,10 +19,9 @@
     <td><%= pacient.cnp %></td>
     <td><%= pacient.telefon1 %></td>
     <td><%= pacient.telefon2 %></td>
-    <td><%= link_to 'Show', pacient %></td>
-    <td><%= link_to 'Edit', edit_pacient_path(pacient) %></td>
-    <td><%= link_to 'Destroy', pacient, confirm: 'Are you sure?', method: :delete %></td>
-    <td><%= link_to 'Studiu', pacient %></td>
+    <td><%= link_to 'Detalii', pacient %></td>
+    <td><%= link_to 'Modifică', edit_pacient_path(pacient) %></td>
+    <td><%= link_to 'Şterge', pacient, :confirm => 'Sigur vrei să ştergi acest pacient?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
