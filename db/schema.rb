@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111020152007) do
+ActiveRecord::Schema.define(:version => 20111031161618) do
 
   create_table "anamnezas", :force => true do |t|
     t.float    "fumator"
@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(:version => 20111020152007) do
     t.boolean  "retinopatie"
     t.integer  "spitalizare"
     t.string   "cod_spitalizare"
-    t.integer  "pacient_id"
+    t.integer  "vizitum_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "data"
     t.string   "tip_vizita"
   end
 
-  add_index "anamnezas", ["pacient_id"], :name => "index_anamnezas_on_pacient_id"
+  add_index "anamnezas", ["vizitum_id"], :name => "index_anamnezas_on_pacient_id"
 
   create_table "clinics", :force => true do |t|
     t.float    "inaltime"
@@ -47,12 +47,12 @@ ActiveRecord::Schema.define(:version => 20111020152007) do
     t.float    "pliu_cutantat_brat"
     t.float    "forta_de_strangere_mana"
     t.date     "data"
-    t.integer  "pacient_id"
+    t.integer  "vizitum_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "clinics", ["pacient_id"], :name => "index_clinics_on_pacient_id"
+  add_index "clinics", ["vizitum_id"], :name => "index_clinics_on_pacient_id"
 
   create_table "medicamentes", :force => true do |t|
     t.integer  "insulina"
@@ -126,13 +126,13 @@ ActiveRecord::Schema.define(:version => 20111020152007) do
     t.float    "albumina_urinara_spot"
     t.float    "creatinina_urinara"
     t.date     "data"
-    t.integer  "pacient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "tip_vizita"
+    t.integer  "vizitum_id"
   end
 
-  add_index "paraclinices", ["pacient_id"], :name => "index_paraclinices_on_pacient_id"
+  add_index "paraclinices", ["vizitum_id"], :name => "index_paraclinices_on_vizita_id"
 
   create_table "sf36s", :force => true do |t|
     t.integer  "pacient_id"
@@ -180,7 +180,7 @@ ActiveRecord::Schema.define(:version => 20111020152007) do
   add_index "sf36s", ["pacient_id"], :name => "index_sf36s_on_pacient_id"
 
   create_table "sgas", :force => true do |t|
-    t.integer  "pacient_id"
+    t.integer  "vizitum_id"
     t.date     "data"
     t.integer  "modificari_greutate"
     t.integer  "modificari_aport_alimentar"
@@ -197,5 +197,15 @@ ActiveRecord::Schema.define(:version => 20111020152007) do
     t.datetime "updated_at"
     t.string   "tip_vizita"
   end
+
+  create_table "vizita", :force => true do |t|
+    t.date     "data"
+    t.string   "tip"
+    t.integer  "pacient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "vizita", ["pacient_id"], :name => "index_vizita_on_pacient_id"
 
 end

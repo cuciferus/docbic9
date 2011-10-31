@@ -1,3 +1,3 @@
 class ParaclinicesController < InheritedResources::Base
-  belongs_to :pacient
+  belongs_to :vizita
 end

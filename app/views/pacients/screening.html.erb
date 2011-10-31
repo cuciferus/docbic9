@@ -6,7 +6,7 @@
 
 <h3> Date paraclinice </h3>
 <div class="inputs">
-<%= f.simple_fields_for :paraclinices, @pacient.paraclinices.build(:tip_vizita => "screening") do |paraclinics| %>
+<%= f.simple_fields_for :paraclinices, @pacient.paraclinices.build(:tip_vizita => "screening"), :remote => true do |paraclinics| %>
   <%= paraclinics.input :data, :label => "Data screeningului" %>
   <%= paraclinics.input :creatinina , :hint => '<div id="egfr" span> Calculează eGFR</span></div>'.html_safe %>
   <%= paraclinics.input :uree %>
@@ -17,7 +17,7 @@
   </div>
 <% end %>
 <div id ="anamneza"><h3> Date anamnestice </h3></div>
-<%= f.simple_fields_for :anamnezas, @pacient.anamnezas.build(:tip_vizita => "screening") do |anamneza| %>
+<%= f.simple_fields_for :anamnezas, @pacient.anamnezas.build(:tip_vizita => "screening"), :remote => true do |anamneza| %>
   <%= anamneza.input :neoplasm , :label => "Dacă pacientul e diagnosticat cu neoplasm precizaţi locaţia" %>
 <% end %>
 <br>

@@ -1,3 +1,3 @@
 class Paraclinice < ActiveRecord::Base
-  belongs_to :pacient
+  belongs_to :vizita
 end

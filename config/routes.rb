@@ -1,16 +1,24 @@
 Docbic9::Application.routes.draw do
   
+
+  resources :vizita do 
+    resources :paraclinices
+    resources :clinics
+    resources :anamnezas
+    resources :sgas
+  end
   resources :pacients do 
     member do
       get "includere"
       get "screening"
+      #resources :vizita
+    end
+    resources :vizita do
+      resources :paraclinices
     end
     resources :sf36s
-    resources :sgas
     resources :paraclinices
-    resources :clinics
     resources :medicamentes
-    resources :anamnezas
     resources :pacient_iesits
   end
 
