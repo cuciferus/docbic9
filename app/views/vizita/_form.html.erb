@@ -1,0 +1,61 @@
+<%= javascript_include_tag "includere" %>
+<%= stylesheet_link_tag "includere" %>
+<h2> Formularul de <%= params[:vizita]%> pentru <%= @pacient.nume %></h2>
+<h3> cu CNP <div id="cnp" span><%= @pacient.cnp %></span></div> </h3><br />
+<%= simple_form_for([@pacient, @vizitum], :remote => true ) do |f| %>
+  <% if @vizitum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vizitum.errors.count, "error") %> prohibited this vizitum from being saved:</h2>
+
+      <ul>
+      <% @vizitum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :data, :label => "Data screeningului" %>
+  </div>
+  <h2> Date clinice </h2>
+ 
+    <%= f.simple_fields_for :clinics, @vizitum.clinics.build do |clinic| %>
+     <%= clinic.input :inaltime, :label => "Înalţime" %>
+     <%= clinic.input :greutate %>
+    <% end %>
+    <h2> Date paraclinice </h2>
+    <%= f.simple_fields_for :paraclinices, @vizitum.paraclinices.build do |paraclinics| %>
+    <%= paraclinics.input :creatinina , :hint => '<div id="egfr" span> Calculează eGFR</span></div>'.html_safe %>
+    <%= paraclinics.input :uree %>
+    <%= paraclinics.input :albumina_urinara_spot %>
+    <%= paraclinics.input :creatinina_urinara %>
+    <%= paraclinics.input :hco3, :label => "Bicarbonat seric" %>
+    <%= paraclinics.input :hba1c, :label => "Hemoglobină glicozilată" %><br />
+    <%= paraclinics.input :pcr, :label => "Proteina C reactivă" %>
+    <%= paraclinics.input :feritina, :label => "feritina" %>
+    <%= paraclinics.input :albumina, :label => "Albumina serică" %>
+    <% end %>
+    <h2> Date anamnestice </h2>
+  <%= f.simple_fields_for :anamnezas, @vizitum.anamnezas.build do |anamneza| %>
+    <%= anamneza.input :neoplasm , :label => "Dacă pacientul e diagnosticat cu neoplasm precizaţi locaţia" %><br />
+  <% end %>
+  <br />
+<h2> SGA </h2>
+  <%= f.simple_fields_for :sgas, @vizitum.sgas.build do |sga| %>
+    <%= sga.input :modificari_greutate, :collection => [["Fără modificări",0], ["Scădere <5%",1,],["Scădere 5-10%",2],["Scădere 10-15%",3],["Peste 15%",4 ]], :label_method =>:first, :value_method => :last, :label => "Modificări în greutate" %>
+  </div>
+    <%= sga.input :modificari_aport_alimentar, :collection => [["Fără modificări",0], ["Aport suboptimal",1], ["Scădere globală moderată",2], ["Dietă lichidiană",3], ["Înfometare",4]], :label_method => :first, :value_mathod => :last, :label => "Modificări în aportul alimentar "  %><br/>
+    <%= sga.input :simptome_gi, :collection => [["Fără simptome",0], ["Greţuri",1], ["Vărsături sau simptome GI moderate",2], ["Diaree/vărsături frecvente",3], ["Anorexie",4]], :label_method => :first, :value_method => :last  %>
+    <%= sga.input :capacitate_functionala, :collection => [["Bună",0], ["Dificultăţi la mers",1], ["Dificultăţi de menaj",2], ["Dificultăţi la eforturi minime",3], ["Imobilizare la pat/fotoliu",4]], :label_method => :first, :value_method => :last , :hint => "legată de statusul nutriţional ", :label => "Capacitatea funcţională" %>
+ <br /> 
+    <%= sga.input :comorbiditatea, :collection => [["Fără comorbidităţi",0], ["Comorbidităţi usoare/neasociate cu BRC",1], ["Comorbidităţi moderate",2], ["O comorbiditate majora",3], ["mai multe comorbidităţi majore",4]], :label_method => :first, :value_method => :last, :hint => '<span div id="comorbiditate_hint"> explicaţie</span></div>'.html_safe, :label=> "Comorbidităţi" %>
+    <%= sga.input :grasime, :collection => [["Fără modificări",0], ["Minimă",1], ["Moderată",2], ["Severă",3]] , :label_method => :first, :value_method => :last, :label => "Depozite de grăsime"  %>
+    <%= sga.input :amiotrofie, :collection => [["Fără modificări",0], ["Minimă",1], ["Moderată",2], ["Severe",3]], :label_method => :first, :value_method => :last %>
+  
+<% end %>
+
+  <div class="actions" id="submit">
+    <%= f.submit "Adaugă vizita" %>
+  </div>
+<% end %>

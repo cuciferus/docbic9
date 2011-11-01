@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Data:</b>
+  <%= @vizitum.data %>
+</p>
+
+<p>
+  <b>Tip:</b>
+  <%= @vizitum.tip %>
+</p>
+
+<p>
+  <b>Pacient:</b>
+  <%= @vizitum.pacient %>
+</p>
+
+
+<%= link_to 'Edit', edit_vizitum_path(@vizitum) %> |
+<%= link_to 'Back', vizita_path %>

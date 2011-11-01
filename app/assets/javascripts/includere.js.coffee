@@ -32,7 +32,7 @@ $(document).ready ->
 	  $("#egfr").replaceWith("<div id='egfr' span>"+ egfr(cnp, creatinina).toFixed(2)+ "ml/min/1.72m2</span></div>")
 	  console.log("<div id='egfr' span>"+ egfr(cnp, creatinina).toFixed(2)+ "ml/min/1.72m2</span></div>")
 	  return true
-	$('.submit_me').click ->
+	$('#submit').click ->
 	  alert 'salut'
 	  return false
 	$("#commit").et('<p> Eşti sigur ca pacientul indeplineşte toate criteriile de includere şi <br> nici un criteriu de excludere?</p>', 'click')

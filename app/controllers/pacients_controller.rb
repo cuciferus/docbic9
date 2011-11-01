@@ -7,7 +7,7 @@ class PacientsController < InheritedResources::Base
      @pacient = Pacient.find(params[:id])
  end
  def create
-     create!{new_pacient_vizitum_path(@pacient)}
+     create!{new_pacient_vizitum_path(@pacient, :vizita => "screening")}
   end
   def randomizare
     #incomplet trebuie verificat

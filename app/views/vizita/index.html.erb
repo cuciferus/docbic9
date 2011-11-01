@@ -1,0 +1,27 @@
+<h1>Listing vizita</h1>
+
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Tip</th>
+    <th>Pacient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vizita.each do |vizitum| %>
+  <tr>
+    <td><%= vizitum.data %></td>
+    <td><%= vizitum.tip %></td>
+    <td><%= vizitum.pacient %></td>
+    <td><%= link_to 'Show', vizitum %></td>
+    <td><%= link_to 'Edit', edit_vizitum_path(vizitum) %></td>
+    <td><%= link_to 'Destroy', vizitum, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= @pacient.nume %>
+<%= link_to 'New Vizitum', new_pacient_vizitum_path(@pacient, :tip => "screening") %>
