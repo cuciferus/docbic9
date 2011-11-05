@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
       config.auth_token = session['access_token']
       config.auth_token_secret = session['access_secret']
     end
-    @client || = Twitter::Client.new
+    @client ||= Twitter::Client.new
   end
 end
