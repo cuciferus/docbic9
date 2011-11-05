@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111031161618) do
+ActiveRecord::Schema.define(:version => 20111105092638) do
 
   create_table "anamnezas", :force => true do |t|
     t.float    "fumator"
@@ -85,9 +85,9 @@ ActiveRecord::Schema.define(:version => 20111031161618) do
   create_table "pacients", :force => true do |t|
     t.string   "nume"
     t.string   "prenume"
-    t.integer  "cnp"
-    t.integer  "telefon1"
-    t.integer  "telefon2"
+    t.string   "cnp",            :limit => 13
+    t.string   "telefon1",       :limit => 10
+    t.string   "telefon2",       :limit => 10
     t.text     "adresa"
     t.date     "data_dg_ckd"
     t.date     "data_dg_diabet"

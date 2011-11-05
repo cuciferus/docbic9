@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Pacient.create(nume: 'Bruce', prenume:'Wayne', cnp:183041300, telefon1:0768768, telefon2:07458181, adresa:"sala mare a paladului") #incomplet
