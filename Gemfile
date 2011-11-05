@@ -10,6 +10,9 @@ gem 'therubyracer'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0.2'
 gem 'inherited_resources'
+#incerc twitter ca primu auth
+gem 'oa-oauth'
+gem 'twitter'
 
 
 # Gems used only for assets and not required
@@ -34,6 +37,9 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+end
+group :develompment do
+  #gem 'faker'
 end
 group :production do
   #pentru heroku
