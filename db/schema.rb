@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111105092638) do
+ActiveRecord::Schema.define(:version => 20111106115840) do
 
   create_table "anamnezas", :force => true do |t|
     t.float    "fumator"
@@ -71,6 +71,24 @@ ActiveRecord::Schema.define(:version => 20111105092638) do
   end
 
   add_index "medicamentes", ["pacient_id"], :name => "index_medicamentes_on_pacient_id"
+
+  create_table "mis", :force => true do |t|
+    t.integer  "greutate"
+    t.integer  "aport"
+    t.integer  "simptome_gi"
+    t.integer  "capacitate_functionala"
+    t.integer  "co_morbiditate"
+    t.integer  "grasime"
+    t.integer  "muschi"
+    t.integer  "bmi"
+    t.integer  "albumina"
+    t.integer  "tibc"
+    t.integer  "vizita_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "mis", ["vizita_id"], :name => "index_mis_on_vizita_id"
 
   create_table "pacient_iesits", :force => true do |t|
     t.date     "data"

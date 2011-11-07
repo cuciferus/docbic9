@@ -1,0 +1,43 @@
+<h1>Listing mis</h1>
+
+<table>
+  <tr>
+    <th>Greutate</th>
+    <th>Aport</th>
+    <th>Simptome gi</th>
+    <th>Capacitate functionala</th>
+    <th>Co-morbiditate</th>
+    <th>Grasime</th>
+    <th>Muschi</th>
+    <th>Bmi</th>
+    <th>Albumina</th>
+    <th>Tibc</th>
+    <th>Vizita</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mis.each do |mi| %>
+  <tr>
+    <td><%= mi.greutate %></td>
+    <td><%= mi.aport %></td>
+    <td><%= mi.simptome_gi %></td>
+    <td><%= mi.capacitate_functionala %></td>
+    <td><%= mi.co-morbiditate %></td>
+    <td><%= mi.grasime %></td>
+    <td><%= mi.muschi %></td>
+    <td><%= mi.bmi %></td>
+    <td><%= mi.albumina %></td>
+    <td><%= mi.tibc %></td>
+    <td><%= mi.vizita %></td>
+    <td><%= link_to 'Show', mi %></td>
+    <td><%= link_to 'Edit', edit_mi_path(mi) %></td>
+    <td><%= link_to 'Destroy', mi, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mi', new_mi_path %>

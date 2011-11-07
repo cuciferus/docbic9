@@ -10,10 +10,11 @@ gem 'therubyracer'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0.2'
 gem 'inherited_resources'
-#incerc twitter ca primu auth
+#incerc twitter ca primu auth, inca nu merge
 gem 'oa-oauth'
 gem 'twitter'
 
+gem 'prawn', :git => 'git://github.com/sandal/prawn.git', :tag => '0.11.1', :submodules => true
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,7 +40,7 @@ group :test do
   gem 'turn', :require => false
 end
 group :develompment do
-  #gem 'faker'
+  gem 'rails-erd'
 end
 group :production do
   #pentru heroku

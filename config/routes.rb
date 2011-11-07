@@ -1,6 +1,8 @@
 Docbic9::Application.routes.draw do
   
 
+  resources :mis
+
   resources :vizita do 
     resources :paraclinices
     resources :clinics
@@ -9,9 +11,12 @@ Docbic9::Application.routes.draw do
   end
   resources :pacients do 
     member do
-      get "includere"
+      #get "includere"
       get "screening"
       #resources :vizita
+    end
+    collection do
+      get "consent"
     end
     resources :vizita do
       resources :paraclinices
@@ -28,6 +33,7 @@ Docbic9::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  #match 'pacients/consent' => 'pacients#consent'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

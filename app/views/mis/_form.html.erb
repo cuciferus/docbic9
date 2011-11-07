@@ -1,0 +1,61 @@
+<%= form_for(@mi) do |f| %>
+  <% if @mi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mi.errors.count, "error") %> prohibited this mi from being saved:</h2>
+
+      <ul>
+      <% @mi.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :greutate %><br />
+    <%= f.number_field :greutate %>
+  </div>
+  <div class="field">
+    <%= f.label :aport %><br />
+    <%= f.number_field :aport %>
+  </div>
+  <div class="field">
+    <%= f.label :simptome_gi %><br />
+    <%= f.number_field :simptome_gi %>
+  </div>
+  <div class="field">
+    <%= f.label :capacitate_functionala %><br />
+    <%= f.number_field :capacitate_functionala %>
+  </div>
+  <div class="field">
+    <%= f.label :co-morbiditate %><br />
+    <%= f.number_field :co-morbiditate %>
+  </div>
+  <div class="field">
+    <%= f.label :grasime %><br />
+    <%= f.number_field :grasime %>
+  </div>
+  <div class="field">
+    <%= f.label :muschi %><br />
+    <%= f.number_field :muschi %>
+  </div>
+  <div class="field">
+    <%= f.label :bmi %><br />
+    <%= f.number_field :bmi %>
+  </div>
+  <div class="field">
+    <%= f.label :albumina %><br />
+    <%= f.number_field :albumina %>
+  </div>
+  <div class="field">
+    <%= f.label :tibc %><br />
+    <%= f.number_field :tibc %>
+  </div>
+  <div class="field">
+    <%= f.label :vizita %><br />
+    <%= f.text_field :vizita %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

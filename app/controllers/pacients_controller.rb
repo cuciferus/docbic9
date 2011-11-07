@@ -1,5 +1,14 @@
 class PacientsController < InheritedResources::Base
-  respond_to :html, :js
+  respond_to :html, :js, :pdf
+  def consent
+    respond_to do |format|
+      format.pdf do
+        send_data Inform.new.to_pdf, :filename => "InformConsent.pdf", :type => "application/pdf",
+                                      :page_size => "A4"
+      end
+    end
+  end
+
   def index
     @pacients = Pacient.paginate(:page => params[:page])
   end
