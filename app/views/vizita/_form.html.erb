@@ -43,7 +43,13 @@
   <br />
 <h2> Malnutrition-inflammation score </h2>
   <%= f.simple_fields_for :mis, @vizitum.mis.build do |mis| %>
-    <%= mis.input :greutate, :label => "Modificări în greutate" %>
+    <%= mis.input :greutate, :label => "Modificări în greutate", :collection =>[["Fără scădere în greutate",0], ["Scădere minoră(sub 1kg)",1],["Scădere de peste 1kg, dar <5% din total",2], ["Scădere de peste 5%",3]], :label_method => :first, :value_method => :last,%>
+    <%= mis.input :aport, :label => "Aport alimentar", :collection => [["Apetit păstrat",0],["Cumva aport suboptimal",1],["Scădere moderata pana la dietă lichidiană",2], ["Dieta lichidiană hipocalorică/înfometare",3]], :label_method => :first, :value_method => :last %>
+    <%= mis.input :simptome_gi, :label => "Simptome Gastro-Intestinale", :collection => [["Fără şi apetit păstrat",0],["Simptome moderate, apetit scăzut, greaţă ocazional",1],["Vărsături ocazionale/sau simptome GI moderate",2], ["Diaree sau vărsături frecvente sau anorexie",3]], :label_method => :first, :value_method => :last %><br />
+    <%= mis.input :capacitate_functionala, :label => "Capacitate funcţională(legată de statusul nutriţional", :collection => [["Normală",0], ["Dificultate ocazională la deplasări sau oboseala frecventă",1], ["Dificultăţi la activităţi uşoare",2], ["Căzut la pat/fotoliu",3]], :label_method =>:first, :value_method => :last %><br />
+    <%= mis.input :co_morbiditate, :label => "Comorbidităţi", :collection => [["Dializă sau sănătos",0], ["Comorbidităţi minore",1], ["Comorbidităţi moderate",2], ["Comorbiditati multiple",3]], :label_method => :first, :value_method => :last, :hint => '<span div id="comorbiditate_hint"> explicaţie</span></div>'.html_safe%><br />
+    <%= mis.input :grasime, :label => "Scaderea depozitelor de grăsime subcutană(oculară, tricipitală, bicipitală, piept)", :collection => [["normal",0], ["uşoară",1], ["moderată",2], ["severă",3]], :value_method => :last, :label_method => :first %><br />
+    <%= mis.input :muschi, :label => "Pierdere masă musculară(tâmplă, claviculă, scapulă, coaste, cvadriceps, genunchi, interosoşi)", :collection => [["normală", 0], ["uşoară",1], ["moderată",2], ["severă",3]], :value_method => :last, :label_method => :first %><br />
   <% end %>
   <div class="actions" id="submit">
     <%= f.submit "Adaugă vizita" %>
