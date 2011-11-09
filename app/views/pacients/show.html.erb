@@ -49,7 +49,6 @@
 Pacient inclus(d/n), Următoarea vizită
 <h3> Acţiuni </h3>
 <%= link_to 'Printează un inform consent pentru pacient' %><br />
-<%= link_to 'Includere', :controller => "pacients", :action => "includere" %>|
-<%= link_to 'Screening', :controller => "pacients", :action => "screening" %>|
+<%= link_to 'Includere', new_pacient_vizitum_path(@pacient) %>|
 <%= link_to 'Vizita 1' %>
 <%= link_to 'Ieşit din studiu' %>

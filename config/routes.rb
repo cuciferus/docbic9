@@ -1,10 +1,10 @@
 Docbic9::Application.routes.draw do
   
 
-  resources :mis
 
   resources :vizita do 
     resources :paraclinices
+    resources :mis
     resources :clinics
     resources :anamnezas
     resources :sgas

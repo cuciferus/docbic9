@@ -1,4 +1,4 @@
-<%= simple_form_for(@pacient) do |f| %>
+<%= form_for(@pacient) do |f| %>
   <% if @pacient.errors.any? %>
     <div id="error_explanation">
       <h2> Unele date ale pacientului <%= @pacient.nume %> sunt introduse greşit.<br />
@@ -48,7 +48,7 @@
     <%= f.label :centru %>
     <%= f.select :centru, Pacient::CENTRE %>
     </div>
-  <%= f.input :semnat_icf, :label => "Bifează dacă pacientul a semnat inform consentul", :as => :boolean %>
+  <%# f.input :semnat_icf, :label => "Bifează dacă pacientul a semnat inform consentul", :as => :boolean %>
 
   <div class="actions">
     <%= f.submit %>

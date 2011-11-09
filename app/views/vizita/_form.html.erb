@@ -41,20 +41,10 @@
     <%= anamneza.input :neoplasm , :label => "Dacă pacientul e diagnosticat cu neoplasm precizaţi locaţia" %><br />
   <% end %>
   <br />
-<h2> SGA </h2>
-  <%= f.simple_fields_for :sgas, @vizitum.sgas.build do |sga| %>
-    <%= sga.input :modificari_greutate, :collection => [["Fără modificări",0], ["Scădere <5%",1,],["Scădere 5-10%",2],["Scădere 10-15%",3],["Peste 15%",4 ]], :label_method =>:first, :value_method => :last, :label => "Modificări în greutate" %>
-  </div>
-    <%= sga.input :modificari_aport_alimentar, :collection => [["Fără modificări",0], ["Aport suboptimal",1], ["Scădere globală moderată",2], ["Dietă lichidiană",3], ["Înfometare",4]], :label_method => :first, :value_mathod => :last, :label => "Modificări în aportul alimentar "  %><br/>
-    <%= sga.input :simptome_gi, :collection => [["Fără simptome",0], ["Greţuri",1], ["Vărsături sau simptome GI moderate",2], ["Diaree/vărsături frecvente",3], ["Anorexie",4]], :label_method => :first, :value_method => :last  %>
-    <%= sga.input :capacitate_functionala, :collection => [["Bună",0], ["Dificultăţi la mers",1], ["Dificultăţi de menaj",2], ["Dificultăţi la eforturi minime",3], ["Imobilizare la pat/fotoliu",4]], :label_method => :first, :value_method => :last , :hint => "legată de statusul nutriţional ", :label => "Capacitatea funcţională" %>
- <br /> 
-    <%= sga.input :comorbiditatea, :collection => [["Fără comorbidităţi",0], ["Comorbidităţi usoare/neasociate cu BRC",1], ["Comorbidităţi moderate",2], ["O comorbiditate majora",3], ["mai multe comorbidităţi majore",4]], :label_method => :first, :value_method => :last, :hint => '<span div id="comorbiditate_hint"> explicaţie</span></div>'.html_safe, :label=> "Comorbidităţi" %>
-    <%= sga.input :grasime, :collection => [["Fără modificări",0], ["Minimă",1], ["Moderată",2], ["Severă",3]] , :label_method => :first, :value_method => :last, :label => "Depozite de grăsime"  %>
-    <%= sga.input :amiotrofie, :collection => [["Fără modificări",0], ["Minimă",1], ["Moderată",2], ["Severe",3]], :label_method => :first, :value_method => :last %>
-  
-<% end %>
-
+<h2> Malnutrition-inflammation score </h2>
+  <%= f.simple_fields_for :mis, @vizitum.mis.build do |mis| %>
+    <%= mis.input :greutate, :label => "Modificări în greutate" %>
+  <% end %>
   <div class="actions" id="submit">
     <%= f.submit "Adaugă vizita" %>
   </div>

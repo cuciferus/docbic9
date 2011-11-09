@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  greutate: 1
+  aport: 1
+  simptome_gi: 1
+  capacitate_functionala: 1
+  co-morbiditate: 1
+  grasime: 1
+  muschi: 1
+  bmi: 1
+  albumina: 1
+  tibc: 1
+  vizita: 
+
+two:
+  greutate: 1
+  aport: 1
+  simptome_gi: 1
+  capacitate_functionala: 1
+  co-morbiditate: 1
+  grasime: 1
+  muschi: 1
+  bmi: 1
+  albumina: 1
+  tibc: 1
+  vizita: 
