@@ -24,9 +24,13 @@ class Inform < Prawn::Document
       text "5. Înţeleg că medicul care mă include în studiu va transmite informaţii medicale organizatorilor acestui studiu"
       text "6. Am înţeles că intrarea mea în studiu este lipsită de orice recompensă materială sau financiară."
       move_down 20
-      text "Numele în clar", :align => :left
+      text "Numele pacientului în clar", :align => :left
       move_down 5
-      text "Semnătura", :align => :left
+      text "Semnătura pacientului", :align => :left
+      move_down 5
+      text "Numele medicului în clar", :align => :left
+      move_down 5
+      text "Semnătura medicului", :align => :left
       text "Data" ,:align => :right
     end
     render
