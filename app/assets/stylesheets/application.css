@@ -22,6 +22,14 @@
   color: blue;
   padding-left: 20px;
 }
+.simple_form h1 {
+  color: blue;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.simple_form table {
+  padding-left: 30px;
+}
    
 .simple_form div.input {   
   margin-bottom: 42px;   

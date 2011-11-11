@@ -1,4 +1,4 @@
-.container h1 {
+.container  {
   margin-top: 0px;
   margin-left: 0px;
   color: blue;
@@ -13,11 +13,16 @@
   border-radius: 10px;
   background: #D0D2D9;
 }
+.container hr {
+  height: 10px;
+  color: red;
+  background: red;
+}
 .container #first {
   height: 15px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #828AFA;
+  background-color: black;
   width: 980px;
   color: rgb(48,84,149);
 }
