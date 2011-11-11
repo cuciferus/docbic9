@@ -5,11 +5,12 @@
  *= require_self
  *= require_tree . 
 */
-.title {
-  background: white;
-}
+
 .simple_form {
   background: #D0D2D9;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 .simple_form label {   
   float: left;   
@@ -38,7 +39,9 @@
 #pagina {
   margin-left: auto;
   margin-right: auto;
-  background-color: #828AFA;
+  background-color: rgb(48,84,149);
   width: 980px;
 }
-
+#pagina title {
+  background-color: rgb(48,84,149);
+}
