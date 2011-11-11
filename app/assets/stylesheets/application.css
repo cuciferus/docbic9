@@ -8,6 +8,9 @@
 h1 {
 color: blue;
 }
+.simple_form {
+  background: #D0D2D9;
+}
 .simple_form label {   
   float: left;   
   width: 250px;   
@@ -16,7 +19,7 @@ color: blue;
 }   
    
 .simple_form div.input {   
-  margin-bottom: 10px;   
+  margin-bottom: 22px;   
 }   
    
 .simple_form div.boolean, .simple_form input[type='submit'] {   
@@ -27,3 +30,8 @@ color: blue;
   float: none;   
   margin: 0;   
 }   
+#pagina {
+  padding: 100px 100px 100px 150px;
+  background: #828AFA;
+}
+
