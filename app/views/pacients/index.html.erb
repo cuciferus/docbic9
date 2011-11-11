@@ -28,5 +28,5 @@
 <%= will_paginate @pacients %>
 
 <br />
-<%= link_to 'Printează un inform consent', consent_pacients_path(:format => 'pdf')%><br /> 
-<%= link_to 'Screnează un pacient nou', new_pacient_path  %>
+<%= button_to 'Printează un inform consent', consent_pacients_path(:format => 'pdf'), :method => :get %><br /> 
+<%= button_to 'Screnează un pacient nou', new_pacient_path, :method => :get  %>
