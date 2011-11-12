@@ -11,6 +11,7 @@
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+  height: 100%;
 }
 .simple_form label {   
   float: left;   
@@ -37,6 +38,7 @@
 }
 .simple_form div.butoane_index {
   float: right;
+  height: 10px;
 }
    
 .simple_form div.input {   
@@ -54,10 +56,21 @@
 }   
 #pagina {
   margin-left: auto;
+  height: 100%;
   margin-right: auto;
   background-color: rgb(48,84,149);
   width: 1000px;
 }
 #pagina title {
   background-color: rgb(48,84,149);
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+}
+.simple_form #cauta {
+  padding-left: 50px;
+  float: left;
 }
