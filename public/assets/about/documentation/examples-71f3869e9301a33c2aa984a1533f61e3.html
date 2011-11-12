@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Examples</title>
+    <meta name="Description" content="Usage examples for Elixon Tooltip API." />
+
+	<link rel="stylesheet" href="./global.css" type="text/css" />
+
+  </head>
+
+  <body>
+    <header>
+	  <h1 id="head">Elixon Tooltip Examples</h1>
+
+	  <a href="http://www.webdevelopers.eu/jquery/tooltip">Home Page</a>
+	  <a href="./index.html">Overview</a>
+	  <a href="./api.html">API</a>
+	  <a href="./appearance.html">Appearance</a>
+	  <a href="./examples.html">Examples</a>
+	</header>
+
+	<div id="body">
+	  <ul>
+		<li>
+		  <a href="#Static-HTML">Static HTML</a>
+		</li>
+		<li>
+		  <a href="#Default-Content">Default Content</a>
+		</li>
+		<li>
+		  <a href="#Generated-Content">Generated Content</a>
+		</li>
+		<li>
+		  <a href="#Commands">Commands</a>
+		</li>
+		<li>
+		  <a href="#Tooltip-Groups">Tooltip Groups</a>
+		</li>
+		<li>
+		  <a href="#Timed">Timed</a>
+		</li>
+		<li>
+		  <a href="#Positioning">Positioning</a>
+		</li>
+		<li>
+		  <a href="#Position-Hinting">Position Hinting</a>
+		</li>
+		<li>
+		  <a href="#Default-Settings">Default Settings</a>
+		</li>
+	  </ul>
+
+<h3 id="Static-HTML">Static HTML</h3>
+<p>Show the tooltip right away.</p>
+<pre>
+  $('#my').et('&lt;p&gt;Hello World&lt;/p&gt;');
+</pre>
+
+<p>Show on click.</p>
+<pre>
+  $('#my').et('&lt;p&gt;Hello World&lt;/p&gt;', 'click');
+</pre>
+
+<h3 id="Default-Content">Default Content</h3>
+<p>Embed the element with id <code>elementID</code> into the bubble.</p>
+<pre>
+  &lt;a id="my" href="#elementID"&gt;Link&lt;/a&gt;
+  $('#my').et();
+</pre>
+
+<p>Open the <code>iframe</code> with the link inside the bubble.</p>
+<pre>
+  &lt;a id="my" href="http://google.com"&gt;Link&lt;/a&gt;
+  $('#my').et();
+</pre>
+
+<p>Display linked image inside the bubble.</p>
+<pre>
+  &lt;a id="my" href="./myimage.png"&gt;Link&lt;/a&gt;
+  $('#my').et();
+</pre>
+
+<p>Display the <code>title</code> text.</p>
+<pre>
+  &lt;abbr id="my" title="My Title"&gt;Link&lt;/abbr&gt;
+  $('#my').et();
+</pre>
+
+
+<h3 id="Generated-Content">Generated Content</h3>
+<p>
+  Per-image tooltip text using the
+  <code>title</code> attribute on mouse hover and callback. In fact this
+  is the default behavior if no content or callback is provided.
+</p>
+<pre>
+  $('img[title]').et(function() {return $('&lt;div&gt;&lt;/div&gt;').text($(this).attr('title'));}, 'hover');
+</pre>
+
+<h3 id="Commands">Commands</h3>
+<pre>
+  $('#my').et('hide');
+  $('#my').et('show');
+  $('#my').et('align');
+</pre>
+
+<h3 id="Tooltip-Groups">Tooltip Groups</h3>
+<p>"Radio" tooltips - showing one hides the others from the same group.</p>
+<pre>
+  $('img.i1').et('click', {group: 'myGroup1'});
+  $('img.i2').et('click', {group: 'myGroup1 myGroup2'});
+  $('img.i3').et('click', {group: 'myGroup2'});
+</pre>
+
+<h3 id="Timed">Timed</h3>
+<p>Hide the tooltip automatically after 3 secons.</p>
+<pre>
+ $('#my').et('&lt;p&gt;Hello world!&lt;/p&gt;', 3000);
+ $('#my').et('&lt;p&gt;Hello world!&lt;/p&gt;', {duration: 3000});
+</pre>
+
+<h3 id="Positioning">Positioning</h3>
+<pre>
+  $('#my').et({position: "top", align: "start"});
+</pre>
+
+<h3 id="Position-Hinting">Position Hinting</h3>
+<pre>
+  &lt;div class="<b>etBottom etCenter</b>"&gt;
+    &lt;a href="./my.png"&gt;Icon&lt;/a&gt;
+	&lt;a href="./my2.png" class="etAuto"&gt;Icon&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;script type="text/javascript"&gt;$('a').et('hover');&lt;/script&gt;
+</pre>
+
+<h3 id="Default-Settings">Default Settings</h3>
+<pre>
+ $.fn.et('defaults', {color: 'light', className: 'bubble'});
+ $.fn.et('defaults', 'hover', 5000); // default method is hover for 5s
+</pre>
+
+	</div>
+	<footer>
+	  ©2011 <a href="http://www.webdevelopers.eu/">Web Developers</a>
+	</footer>
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+	<!-- <script type="text/javascript" src="/packages/jquery/plugins/jquery.toc-1.0.js"></script> -->
+	<!-- <script type="text/javascript"> -->
+	<!--   $(function() {$('.toc').toc('h1, h2, h3, h4, h5, h6', 'body');}); -->
+	<!-- </script> -->
+  </body>
+</html>
