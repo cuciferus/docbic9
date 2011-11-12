@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class PacientsController < InheritedResources::Base
   respond_to :html, :js
   respond_to :pdf, :only => :consent
@@ -12,7 +13,7 @@ class PacientsController < InheritedResources::Base
   end
 
   def index
-    @pacients = Pacient.paginate(:page => params[:page])
+    @pacients = Pacient.search(params[:search]).paginate(:page => params[:page])
   end
 
   def create

@@ -1,6 +1,19 @@
 <div id="pagina">
+<div class="simple_form">
+  <div class="butoane_index">
+    <h1> Pacient nou </h1>
+<%= button_to 'Printează un inform consent', consent_pacients_path(:format => 'pdf'), :method => :get %><br /> 
+<%= button_to 'Screnează un pacient nou', new_pacient_path, :method => :get  %>
+</div>
 <h1>Pacienti inscrisi</h1>
-
+<div id="cauta" >
+   <%= form_tag pacients_path, :method => 'get' do %>
+     <p>
+     <%= text_field_tag :search, params[:search] %>
+     <%= submit_tag "Caută pacient", :name => nil %>
+     </p>
+   <% end %>
+ </div>
 <table>
   <tr>
     <th>Nume</th>
@@ -8,9 +21,7 @@
     <th>Cnp</th>
     <th>Telefon1</th>
     <th>Telefon2</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Acţiuni</th>
   </tr>
 
 <% @pacients.each do |pacient| %>
@@ -20,15 +31,14 @@
     <td><%= pacient.cnp %></td>
     <td><%= pacient.telefon1 %></td>
     <td><%= pacient.telefon2 %></td>
-    <td><%= link_to 'Detalii', pacient %></td>
-    <td><%= link_to 'Modifică', edit_pacient_path(pacient) %></td>
-    <td><%= link_to 'Şterge', pacient, :confirm => 'Sigur vrei să ştergi acest pacient?', :method => :delete %></td>
+    <td><%= link_to 'Modifică', edit_pacient_path(pacient) %><br />
+    <%= link_to 'Şterge', pacient, :confirm => 'Sigur vrei să ştergi acest pacient?', :method => :delete %><br />
+    <%= link_to 'Adaugă vizită' %></td>
   </tr>
 <% end %>
 </table>
 <%= will_paginate @pacients %>
 
 <br />
-<%= button_to 'Printează un inform consent', consent_pacients_path(:format => 'pdf'), :method => :get %><br /> 
-<%= button_to 'Screnează un pacient nou', new_pacient_path, :method => :get  %>
+</div>
 </div>

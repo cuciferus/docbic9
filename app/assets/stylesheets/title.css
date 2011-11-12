@@ -17,6 +17,8 @@
   height: 10px;
   color: red;
   background: red;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 .container #first {
   height: 15px;
@@ -25,4 +27,11 @@
   background-color: black;
   width: 980px;
   color: rgb(48,84,149);
+}
+.container h1 {
+  margin-bottom: 9px;
+}
+.container h1:first-child hr {
+  height: 5px;
+  background: black;
 }
