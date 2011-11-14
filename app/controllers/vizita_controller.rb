@@ -9,4 +9,5 @@ class VizitaController < InheritedResources::Base
       flash[:notice] = "vizita de felu #{params[:vizita]}"
     end
   end
+  
 end

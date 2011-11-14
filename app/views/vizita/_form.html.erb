@@ -44,6 +44,7 @@
     <%= anamneza.input :neoplasm , :label => "Dacă pacientul e diagnosticat cu neoplasm precizaţi locaţia" %><br />
   <% end %>
   <br />
+  <div id="mis">
 <h2> Malnutrition-inflammation score </h2>
   <%= f.simple_fields_for :mis, @vizitum.mis.build do |mis| %>
     <%= mis.input :greutate, :label => "Modificări în greutate", :collection =>[["Fără scădere în greutate",0], ["Scădere minoră(sub 1kg)",1],["Scădere de peste 1kg, dar <5% din total",2], ["Scădere de peste 5%",3]], :label_method => :first, :value_method => :last,%>
@@ -54,6 +55,7 @@
     <%= mis.input :grasime, :label => "Scaderea depozitelor de grăsime subcutană(oculară, tricipitală, bicipitală, piept)", :collection => [["normal",0], ["uşoară",1], ["moderată",2], ["severă",3]], :value_method => :last, :label_method => :first %><br />
     <%= mis.input :muschi, :label => "Pierdere masă musculară(tâmplă, claviculă, scapulă, coaste, cvadriceps, genunchi, interosoşi)", :collection => [["normală", 0], ["uşoară",1], ["moderată",2], ["severă",3]], :value_method => :last, :label_method => :first %><br />
   <% end %>
+</div>
   <div class="actions" id="submit">
     <%= f.submit "Adaugă vizita" %>
   </div>
