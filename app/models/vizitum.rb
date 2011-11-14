@@ -16,7 +16,7 @@ class Vizitum < ActiveRecord::Base
   private
   def prelucreaza_nutritia
     self.paraclinices_attributes=[:data => self.data]
-    self.mis_attributes=[:data => self.data]
+    #self.mis_attributes=[:data => self.data]
     self.clinics_attributes=[:data => self.data]
     self.anamnezas_attributes=[:data => self.data]
   end

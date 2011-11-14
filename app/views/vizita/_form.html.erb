@@ -4,7 +4,7 @@
   <div class="title">
 </div>
 <%= simple_form_for([@pacient, @vizitum], :remote => true ) do |f| %>
-<h2> Formularul de <%= params[:vizita]%> pentru <%= @pacient.nume %></h2>
+<h2> Formularul de <%= params[:tip]%> pentru <%= @pacient.nume %></h2>
 <h3> cu CNP <div id="cnp" span><%= @pacient.cnp %></span></div> </h3><br />
   <% if @vizitum.errors.any? %>
     <div id="error_explanation">

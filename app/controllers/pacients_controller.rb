@@ -20,7 +20,7 @@ class PacientsController < InheritedResources::Base
      @pacient = Pacient.new(params[:pacient])
      respond_to do |format|
        if @pacient.save
-         format.html {redirect_to new_pacient_vizitum_path(@pacient, :vizita => "screening" )}
+         format.html {redirect_to new_pacient_vizitum_path(@pacient, :tip => "screening" )}
        else
          format.html { render :action => "new"}
        end
