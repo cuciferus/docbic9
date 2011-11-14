@@ -3,11 +3,11 @@ Docbic9::Application.routes.draw do
 
 
   resources :vizita do 
-    resources :paraclinices
-    resources :mis
-    resources :clinics
-    resources :anamnezas
-    resources :sgas
+    resource :paraclinice
+    resource :mi
+    resource :clinic
+    resource :anamneza
+    resource :sga
   end
   resources :pacients do 
     member do

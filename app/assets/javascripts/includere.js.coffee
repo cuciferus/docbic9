@@ -26,7 +26,7 @@ $(document).ready ->
 	  alert("salut din link")
 	  et('<p> salut din link</p>')
 	
-	$("#vizitum_paraclinices_attributes_0_creatinina").keyup ->
+	$("#vizitum_paraclinice_attributes_creatinina").keyup ->
 	  cnp= $("#cnp").html()
 	  creatinina = (Number) $(this).val()
 	  $("#egfr").replaceWith("<div id='egfr' span>"+ egfr(cnp, creatinina).toFixed(2)+ "ml/min/1.72m2</span></div>")

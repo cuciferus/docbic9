@@ -23,16 +23,16 @@
   </div>
   <h2> Date clinice </h2>
  
-    <%= f.simple_fields_for :clinics, @vizitum.clinics.build do |clinic| %>
+    <%= f.simple_fields_for :clinic, @vizitum.build_clinic do |clinic| %>
      <%= clinic.input :inaltime, :label => "Înalţime" %>
      <%= clinic.input :greutate %>
    <% end %>
    <h2> Doza de bicarbonat </h2>
-     <%= f.simple_fields_for :medicamentes, @vizitum.medicamentes.build do |medicamente| %>
+     <%= f.simple_fields_for :medicamente, @vizitum.build_medicamente do |medicamente| %>
        <%= medicamente.input :bicarbonat %>
      <% end %>
     <h2> Date paraclinice </h2>
-    <%= f.simple_fields_for :paraclinices, @vizitum.paraclinices.build do |paraclinics| %>
+    <%= f.simple_fields_for :paraclinice, @vizitum.build_paraclinice do |paraclinics| %>
     <%= paraclinics.input :creatinina , :hint => '<div id="egfr" span> Calculează eGFR</span></div>'.html_safe %>
     <%= paraclinics.input :uree %>
     <%= paraclinics.input :albumina_urinara_spot %>
@@ -44,13 +44,13 @@
     <%= paraclinics.input :albumina, :label => "Albumina serică" %>
     <% end %>
     <h2> Date anamnestice </h2>
-  <%= f.simple_fields_for :anamnezas, @vizitum.anamnezas.build do |anamneza| %>
+  <%= f.simple_fields_for :anamneza, @vizitum.build_anamneza do |anamneza| %>
     <%= anamneza.input :neoplasm , :label => "Dacă pacientul e diagnosticat cu neoplasm precizaţi locaţia" %><br />
   <% end %>
   <br />
   <div id="mis">
 <h2> Malnutrition-inflammation score </h2>
-  <%= f.simple_fields_for :mis, @vizitum.mis.build do |mis| %>
+  <%= f.simple_fields_for :mi, @vizitum.build_mi do |mis| %>
     <%= mis.input :greutate, :label => "Modificări în greutate", :collection =>[["Fără scădere în greutate",0], ["Scădere minoră(sub 1kg)",1],["Scădere de peste 1kg, dar <5% din total",2], ["Scădere de peste 5%",3]], :label_method => :first, :value_method => :last,%>
     <%= mis.input :aport, :label => "Aport alimentar", :collection => [["Apetit păstrat",0],["Cumva aport suboptimal",1],["Scădere moderata pana la dietă lichidiană",2], ["Dieta lichidiană hipocalorică/înfometare",3]], :label_method => :first, :value_method => :last %>
     <%= mis.input :simptome_gi, :label => "Simptome Gastro-Intestinale", :collection => [["Fără şi apetit păstrat",0],["Simptome moderate, apetit scăzut, greaţă ocazional",1],["Vărsături ocazionale/sau simptome GI moderate",2], ["Diaree sau vărsături frecvente sau anorexie",3]], :label_method => :first, :value_method => :last %><br />
