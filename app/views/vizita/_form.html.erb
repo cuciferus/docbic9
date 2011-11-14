@@ -26,7 +26,11 @@
     <%= f.simple_fields_for :clinics, @vizitum.clinics.build do |clinic| %>
      <%= clinic.input :inaltime, :label => "Înalţime" %>
      <%= clinic.input :greutate %>
-    <% end %>
+   <% end %>
+   <h2> Doza de bicarbonat </h2>
+     <%= f.simple_fields_for :medicamentes, @vizitum.medicamentes.build do |medicamente| %>
+       <%= medicamente.input :bicarbonat %>
+     <% end %>
     <h2> Date paraclinice </h2>
     <%= f.simple_fields_for :paraclinices, @vizitum.paraclinices.build do |paraclinics| %>
     <%= paraclinics.input :creatinina , :hint => '<div id="egfr" span> Calculează eGFR</span></div>'.html_safe %>

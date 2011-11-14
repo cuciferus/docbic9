@@ -2,11 +2,13 @@ class Vizitum < ActiveRecord::Base
   #before_validation PrelucreazaNutritia.new
   belongs_to :pacient
   has_many :paraclinices
+  has_many :medicamentes
   has_many :mis#, :after_add => :get_attributes_from_paraclinices
   has_many :anamnezas
   has_many :clinics
   has_many :sgas
   accepts_nested_attributes_for :paraclinices
+  accepts_nested_attributes_for :medicamentes
   accepts_nested_attributes_for :mis
   accepts_nested_attributes_for :sgas
   accepts_nested_attributes_for :clinics
@@ -15,10 +17,11 @@ class Vizitum < ActiveRecord::Base
   before_save :prelucreaza_nutritia
   private
   def prelucreaza_nutritia
-    self.paraclinices_attributes=[:data => self.data]
-    #self.mis_attributes=[:data => self.data]
-    self.clinics_attributes=[:data => self.data]
-    self.anamnezas_attributes=[:data => self.data]
+    if self.tip == "screening"
+      self.paraclinices_attributes=[:data => self.data]
+      self.clinics_attributes=[:data => self.data]
+      self.anamnezas_attributes=[:data => self.data]
+    end
   end
 end
 
