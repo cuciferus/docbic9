@@ -1,3 +1,3 @@
 class Medicamente < ActiveRecord::Base
-  belongs_to :pacient
+  belongs_to :vizitum
 end

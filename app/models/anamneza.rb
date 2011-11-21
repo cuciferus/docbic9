@@ -1,3 +1,3 @@
 class Anamneza < ActiveRecord::Base
-  belongs_to :vizita
+  belongs_to :vizitum
 end

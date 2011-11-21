@@ -2,7 +2,7 @@ class Vizitum < ActiveRecord::Base
   belongs_to :pacient
   has_one :paraclinice
   has_one :medicamente
-  has_one :mi#, :after_add => :get_attributes_from_paraclinices
+  has_one :mi
   has_one :anamneza
   has_one :clinic
   has_one :sga
@@ -13,7 +13,7 @@ class Vizitum < ActiveRecord::Base
   accepts_nested_attributes_for :clinic
   accepts_nested_attributes_for :anamneza
   #before_save PrelucreazaNutritia.new
-  #before_save :prelucreaza_nutritia
+  before_update :prelucreaza_nutritia
   private
   def calculeaza_bmi_categorie(inaltime, greutate)
     puts 'G=', greutate, 'I=', inaltime
@@ -32,12 +32,14 @@ class Vizitum < ActiveRecord::Base
     bmi_categorie
   end
   def prelucreaza_nutritia
+    puts 'salut din callback'
     if self.tip == "screening"
-      self.paraclinice_attributes=[:data => self.data]
-      self.clinic_attributes=[:data => self.data]
-      self.anamneza_attributes=[:data => self.data]
-      puts self.clinic_attributes[:inaltime]
-      #calculeaza_bmi_categorie(self.clinics[:inaltime], self.clinics[:greutate])
+      self.paraclinice_attributes={:data => self.data}
+      self.clinic_attributes={:data => self.data}
+      self.anamneza_attributes={:data => self.data}
+      puts 'clinic e', self.anamneza.data
+      #puts 'inaltimea e ',self.clinic.inaltime
+      #puts calculeaza_bmi_categorie(self.clinic[:inaltime], self.clinic[:greutate])
       #self.mis_attributes=[:bmi => :calculeaza_bmi_categorie(self.clinics[:inaltime], self.clinics[:greutate])]
     end
   end
