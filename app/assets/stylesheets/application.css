@@ -14,6 +14,8 @@ html {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   height: 100%;
+  margin-top: 2%;
+  padding-top: 5%;
 }
 .simple_form label {   
   float: left;   
@@ -84,7 +86,16 @@ html {
   float: left;
   width: 20%;
 }
-
+.simple_form.pacient label {
+  padding-left: 5%;
+  float: left;
+  width: 15%;
+  line-height: 90%;
+}
+.simple_form.pacient div.field textarea#pacient_adresa {
+  width: 40%;
+  margin-left: 25%;
+}
 #pagina title {
   background-color: rgb(48,84,149);
 }
