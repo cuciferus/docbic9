@@ -32,8 +32,8 @@ html {
 }
 .simple_form h1 {
   color: rgb(48,84,149);
-  padding-top: 20px;
-  padding-left: 20px;
+  padding-left: 3%;
+  padding-bottom: 3%;
 }
 .simple_form table {
   display: block;
