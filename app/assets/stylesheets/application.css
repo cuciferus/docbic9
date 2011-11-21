@@ -57,7 +57,8 @@ html {
    
 .simple_form div.boolean, .simple_form input[type='submit'] {   
   margin-left: 30%;   
-  margin-top: 15%;
+  margin-top: 8%;
+  margin-bottom: 5%;
 }   
    
 .simple_form div.boolean label {   
@@ -71,11 +72,17 @@ html {
   background-color: rgb(48,84,149);
   width: 80%;
 }
-#pagina_vizita {
+.simple_form.vizitum {
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(48,84,149);
+  background-color: #D0D2D9;
   width: 80%;
+}
+.simple_form.vizitum label {
+  padding-left: 5%;
+  text-align: right;
+  float: left;
+  width: 20%;
 }
 
 #pagina title {
