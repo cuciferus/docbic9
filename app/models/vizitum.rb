@@ -37,10 +37,9 @@ class Vizitum < ActiveRecord::Base
       self.paraclinice_attributes={:data => self.data}
       self.clinic_attributes={:data => self.data}
       self.anamneza_attributes={:data => self.data}
-      puts 'clinic e', self.anamneza.data
-      #puts 'inaltimea e ',self.clinic.inaltime
-      #puts calculeaza_bmi_categorie(self.clinic[:inaltime], self.clinic[:greutate])
-      #self.mis_attributes=[:bmi => :calculeaza_bmi_categorie(self.clinics[:inaltime], self.clinics[:greutate])]
+      puts 'data vizitei e', self.data
+      puts 'data anamnezei e', self.anamneza.data
+
     end
   end
 end

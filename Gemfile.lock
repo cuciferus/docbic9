@@ -46,6 +46,7 @@ GEM
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    coderay (0.9.8)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0)
@@ -78,6 +79,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.6.7)
+      ruby_parser (>= 2.3.1)
     mime-types (1.17.2)
     multi_json (1.0.3)
     multi_xml (0.4.1)
@@ -98,6 +101,17 @@ GEM
       Ascii85 (~> 1.0.0)
     pg (0.11.0)
     polyglot (0.3.3)
+    pry (0.9.7.4)
+      coderay (~> 0.9.8)
+      method_source (~> 0.6.7)
+      ruby_parser (>= 2.3.1)
+      slop (~> 2.1.0)
+    pry-doc (0.3.0)
+      pry (>= 0.9.0)
+      yard (>= 0.6.4)
+    pry-rails (0.0.4)
+      pry
+      pry-doc
     rack (1.3.5)
     rack-cache (1.0.3)
       rack (>= 0.4)
@@ -131,6 +145,8 @@ GEM
       json (~> 1.4)
     responders (0.6.4)
     ruby-graphviz (0.9.21)
+    ruby_parser (2.3.1)
+      sexp_processor (~> 3.0)
     sass (3.1.10)
     sass-rails (3.1.4)
       actionpack (~> 3.1.0)
@@ -138,10 +154,12 @@ GEM
       sass (>= 3.1.4)
       sprockets (~> 2.0.0)
       tilt (~> 1.3.2)
+    sexp_processor (3.0.8)
     simple_form (1.5.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
     simple_oauth (0.1.5)
+    slop (2.1.0)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -170,6 +188,7 @@ GEM
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
     will_paginate (3.0.2)
+    yard (0.7.3)
 
 PLATFORMS
   ruby
@@ -181,6 +200,7 @@ DEPENDENCIES
   oa-oauth
   pg
   prawn!
+  pry-rails
   rails (= 3.1.0)
   rails-erd
   sass-rails (~> 3.1.0)

@@ -41,6 +41,7 @@ group :test do
 end
 group :develompment do
   gem 'rails-erd'
+  gem 'pry-rails'
 end
 group :production do
   #pentru heroku

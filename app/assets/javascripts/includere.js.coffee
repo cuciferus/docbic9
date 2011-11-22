@@ -21,7 +21,7 @@ egfr = (cnp, creatinina) ->
   console.log(141*primu*doilea*treilea*coeficient)
   141*primu*doilea*treilea*coeficient
 $(document).ready ->
-	$("#comorbiditate_hint").et('<p> Comorbidităţile Severe:</b><br><ul><li> ICC cls III-IV NYHA</li><li> boala SIDA</li><li> boală coronariană severă</li><li> BPOC moderat sever</li><li> sechele neurologice severe</li><li>neoplasm metastazat sau chimioterapie recentă</li></ul></p>','click', {align:"start", color:"blue"})
+	$("#vizitum_mi_attributes_co_morbiditate").et('<p> Comorbidităţile Severe:</b><br><ul><li> ICC cls III-IV NYHA</li><li> boala SIDA</li><li> boală coronariană severă</li><li> BPOC moderat sever</li><li> sechele neurologice severe</li><li>neoplasm metastazat sau chimioterapie recentă</li></ul></p>','click', {align:"start", color:"blue"})
 	$("#sga_greutate_span:hint").click ->
 	  alert("salut din link")
 	  et('<p> salut din link</p>')
