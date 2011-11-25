@@ -1,3 +1,5 @@
+<%= javascript_include_tag "pacients" %>
+<%= stylesheet_link_tag "pacients" %>
 <div id="pagina" >
 <%= simple_form_for(@pacient) do |f| %>
 <h1>Pacient nou </h1>
@@ -24,15 +26,15 @@
   </div>
   <div class="field">
     <%= f.label :cnp %>
-    <%= f.number_field :cnp %>
+    <%= f.text_field :cnp %>
   </div>
   <div class="field">
     <%= f.label :telefon1 %>
-    <%= f.number_field :telefon1 %>
+    <%= f.text_field :telefon1 %>
   </div>
   <div class="field">
     <%= f.label :telefon2 %>
-    <%= f.number_field :telefon2 %>
+    <%= f.text_field :telefon2 %>
   </div>
   <div class="field">
     <%= f.label :adresa %><br />
@@ -40,18 +42,20 @@
   </div>
   <div class="field">
     <%= f.label :data_dg_ckd %>
-    <%= f.date_select :data_dg_ckd, :include_blank => true %>
+    <%= f.text_field :data_dg_ckd %>
   </div>
   <div class="field">
     <%= f.label :data_dg_diabet %>
-    <%= f.date_select :data_dg_diabet, :include_blank => true %>
+    <%= f.text_field :data_dg_diabet, :include_blank => true %>
   </div>
   <div class="field">
-    <%= f.label :centru %>
-    <%= f.select :centru, Pacient::CENTRE %>
-    </div>
-  <%# f.input :semnat_icf, :label => "Bifează dacă pacientul a semnat inform consentul", :as => :boolean %>
+    <%# f.label :centru %>
+    <%# f.select :centru, Pacient::CENTRE, :as => :radio %>
+    <%= f.input :centru, :collection => Pacient::CENTRE, :as => :radio %>
+  </div>
+  <%= link_to 'Printează un inform consent', consent_pacients_path(:format => 'pdf'), :method => :get %>
 
+    <%= f.input :semnat_icf, :label => "Bifează dacă pacientul a semnat inform consentul", :as => :boolean %>
   <div class="actions">
     <%= f.submit 'Adaugă pacient' %>
   </div>

@@ -13,7 +13,7 @@ class PacientsController < InheritedResources::Base
   end
 
   def index
-    @pacients = Pacient.search(params[:search]).paginate(:page => params[:page])
+    @pacients = Pacient.paginate(:page => params[:page])
   end
 
   def create
