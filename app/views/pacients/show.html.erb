@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<div id="pagina">
+  <div class="simple_form">
 <h3> Navigare </h3>
 <%= link_to 'Edit', edit_pacient_path(@pacient) %> |
 <%= link_to 'Back', pacients_path %>
@@ -6,9 +8,6 @@
 <p>
   <b>Nume:</b>
   <%= @pacient.nume %>
-</p>
-
-<p>
   <b>Prenume:</b>
   <%= @pacient.prenume %>
 </p>
@@ -17,13 +16,10 @@
   <b>Cnp:</b>
   <%= @pacient.cnp %>
 </p>
-
+<h3> Date opţionale </h3>
 <p>
   <b>Telefon1:</b>
   <%= @pacient.telefon1 %>
-</p>
-
-<p>
   <b>Telefon2:</b>
   <%= @pacient.telefon2 %>
 </p>
@@ -39,16 +35,15 @@
 <p>
   <b>Data dg ckd:</b>
   <%= @pacient.data_dg_ckd %>
-</p>
-
-<p>
   <b>Data dg diabet:</b>
   <%= @pacient.data_dg_diabet %>
 </p>
 <h3> Informaţii </h3>
-Pacient inclus(d/n), Următoarea vizită
+Pacient inclus(d/n), Următoarea vizită<br />
 <h3> Acţiuni </h3>
 <%= link_to 'Printează un inform consent pentru pacient' %><br />
 <%= link_to 'Includere', new_pacient_vizitum_path(@pacient) %>|
 <%= link_to 'Vizita 1' %>
 <%= link_to 'Ieşit din studiu' %>
+</div>
+</div>

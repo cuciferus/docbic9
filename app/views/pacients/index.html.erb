@@ -33,7 +33,7 @@
     <td><%= pacient.telefon2 %></td>
     <td><%= link_to 'Modifică', edit_pacient_path(pacient) %><br />
     <%= link_to 'Şterge', pacient, :confirm => 'Sigur vrei să ştergi acest pacient?', :method => :delete %><br />
-    <%= link_to 'Adaugă vizită' %></td>
+    <%= link_to 'Adaugă vizită', pacient_path(pacient) %></td>
   </tr>
 <% end %>
 </table>

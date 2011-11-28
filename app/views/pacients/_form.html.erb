@@ -49,9 +49,7 @@
     <%= f.text_field :data_dg_diabet, :include_blank => true %>
   </div>
   <div class="field">
-    <%# f.label :centru %>
-    <%# f.select :centru, Pacient::CENTRE, :as => :radio %>
-    <%= f.input :centru, :collection => Pacient::CENTRE, :as => :radio %>
+    <%= f.input :centru, :collection => Pacient::CENTRE, :as => :radio, :label => "Selectează centru" %>
   </div>
   <%= link_to 'Printează un inform consent', consent_pacients_path(:format => 'pdf'), :method => :get %>
 
