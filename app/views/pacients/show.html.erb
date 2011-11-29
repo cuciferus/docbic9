@@ -2,8 +2,8 @@
 <div id="pagina">
   <div class="simple_form">
 <h3> Navigare </h3>
-<%= link_to 'Edit', edit_pacient_path(@pacient) %> |
-<%= link_to 'Back', pacients_path %>
+<%= link_to 'Schimbă datele pacientului', edit_pacient_path(@pacient) %> |
+<%= link_to 'Înapoi la pacienţi', pacients_path %>
 <h3> Date Pacient </h3>
 <p>
   <b>Nume:</b>
@@ -39,11 +39,31 @@
   <%= @pacient.data_dg_diabet %>
 </p>
 <h3> Informaţii </h3>
-Pacient inclus(d/n), Următoarea vizită<br />
+Pacient inclus(d/n), Grup(control/intensiv)
+<h3> Tabel cu vizite </h3>
+<table>
+  <tr>
+    <th> Screening </th>
+    <th> Randomizare </th>
+    <th> Intervenţie </th>
+    <th> Mijloc </th>
+    <th> PostIntervenţie </th>
+    <th> Vizită Neprogramată </th>
+    <th> Vizita standard </th>
+  </tr>
+  <tr>
+    <% data_screening = @pacient.vizita.where(:tip => "screening").first.data %>
+    <td> <%= link_to data_screening, vizitum_path(@pacient.vizita.where(:tip => "screening").first) %></td>
+    <td> <%= link_to data_screening.advance(:months => 1) %>
+      Peste <%= data_screening.advance(:months => 1).mjd - Date.today.mjd %> zile </td>
+
+  </tr>
+</table>
+
+
+
 <h3> Acţiuni </h3>
-<%= link_to 'Printează un inform consent pentru pacient' %><br />
 <%= link_to 'Includere', new_pacient_vizitum_path(@pacient) %>|
-<%= link_to 'Vizita 1' %>
 <%= link_to 'Ieşit din studiu' %>
 </div>
 </div>
