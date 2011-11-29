@@ -19,7 +19,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.input :data, :label => "Data screeningului" %>
+    <%= f.input :data, :label => "Data screeningului", :as => :string %>
   </div>
   <h2> Date clinice </h2>
  
@@ -33,15 +33,19 @@
      <% end %>
     <h2> Date paraclinice </h2>
     <%= f.simple_fields_for :paraclinice, @vizitum.build_paraclinice do |paraclinics| %>
-    <%= paraclinics.input :creatinina , :hint => '<div id="egfr" span> Calculează eGFR</span></div>'.html_safe %>
-    <%= paraclinics.input :uree %>
-    <%= paraclinics.input :albumina_urinara_spot %>
-    <%= paraclinics.input :creatinina_urinara %>
-    <%= paraclinics.input :hco3, :label => "Bicarbonat seric" %>
-    <%= paraclinics.input :hba1c, :label => "Hemoglobină glicozilată" %><br />
-    <%= paraclinics.input :pcr, :label => "Proteina C reactivă" %>
-    <%= paraclinics.input :feritina, :label => "Feritina" %>
-    <%= paraclinics.input :albumina, :label => "Albumina serică" %>
+      <%= paraclinics.input :creatinina , :hint => '<div id="egfr" span> Calculează eGFR</span></div>'.html_safe %>
+      <%= paraclinics.input :uree %>
+      <%= paraclinics.input :albumina_urinara_spot %>
+      <%= paraclinics.input :creatinina_urinara %>
+      <%= paraclinics.input :hco3, :label => "Bicarbonat seric" %>
+      <%= paraclinics.input :hba1c, :label => "Hemoglobină glicozilată" %><br />
+      <%= paraclinics.input :pcr, :label => "Proteina C reactivă" %>
+      <%= paraclinics.input :feritina, :label => "Feritina" %>
+      <%= paraclinics.input :albumina, :label => "Albumina serică" %>
+      <%= paraclinics.input :ph %>
+      <%= paraclinics.input :sodiu %>
+      <%= paraclinics.input :potasiu %>
+      <%= paraclinics.input :clor %>
     <% end %>
     <h2> Date anamnestice </h2>
   <%= f.simple_fields_for :anamneza, @vizitum.build_anamneza do |anamneza| %>

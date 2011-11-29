@@ -1,5 +1,7 @@
 //= require jquery
 //= require jquery.tooltip
+//= require jquery_ujs
+//= require jquery-ui
 egfr = (cnp, creatinina) ->
   sex = cnp[0]
   if sex == '1' 
@@ -38,3 +40,6 @@ $(document).ready ->
 	  return false
 	  ###
 	$("#commit").et('<p> Eşti sigur ca pacientul indeplineşte toate criteriile de includere şi <br> nici un criteriu de excludere?</p>', 'click')
+	$("#vizitum_data").datepicker({dateFormat: 'yyyy-mm-dd'})
+	$("#vizitum_data").datepicker()
+
