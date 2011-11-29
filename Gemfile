@@ -5,9 +5,6 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-#in lucru, am gasit jquery plugin sa faca acelasi lucru
-#gem 'client_side_validations'
-
 gem 'sqlite3'
 gem 'therubyracer'
 gem 'simple_form'
