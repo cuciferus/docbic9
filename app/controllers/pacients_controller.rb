@@ -1,7 +1,13 @@
 require 'will_paginate/array'
 class PacientsController < InheritedResources::Base
-  respond_to :html, :js
+  respond_to :html, :js, :json
   respond_to :pdf, :only => :consent
+  def verifica_cnp
+    @pacient = Pacient.find_by_cnp(params[:pacient][:cnp])
+    respond_to do |format|
+      format.json { render :json => !@pacient}
+    end
+  end
 
   def consent
     respond_to do |format|

@@ -18,15 +18,17 @@ html {
   padding-top: 5%;
 }
 #pagina #error-explanation {
-  float: left;
-  padding-left: 10%;
+  text-align: bottom;
 }
-
+.simple_form .error {
+  float: left;
+  padding-bottom: 2%;
+}
 .simple_form label {   
   float: left;   
-  /*width: 150px;   */
   text-align: right;   
   padding-right: 5%;
+  display: block;
 }   
 .simple_form #mis label {
   width: 250px;

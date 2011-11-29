@@ -2,6 +2,7 @@ Docbic9::Application.routes.draw do
   
 
 
+  match 'pacients/verifica_cnp', :controller => "pacients", :action => "verifica_cnp"
   resources :vizita do 
     resource :paraclinice
     resource :mi
@@ -13,6 +14,7 @@ Docbic9::Application.routes.draw do
     member do
       #get "includere"
       get "screening"
+      get "verifica_cnp"
       #resources :vizita
     end
     collection do
@@ -26,6 +28,7 @@ Docbic9::Application.routes.draw do
     resources :medicamentes
     resources :pacient_iesits
   end
+  #map.verifica_cnp "pacients/verifica_cnp", :controller => "pacients", :action => "verifica_cnp"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
