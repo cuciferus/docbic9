@@ -3,8 +3,8 @@
 //= require jquery-ui
 //= require jquery.validate.min
 $(document).ready ->
-   $("#pacient_data_dg_ckd").datepicker({dateFormat: 'yyyy-mm-dd'})
-   $("#pacient_data_dg_diabet").datepicker()
+   $("#pacient_data_dg_ckd").datepicker({dateFormat: 'yy-mm-dd'})
+   $("#pacient_data_dg_diabet").datepicker({dateFormat: 'yy-mm-dd'})
 
    $("#new_pacient").validate({
    debug: true,
@@ -36,5 +36,6 @@ $(document).ready ->
     required: "Te rog un număr de telefon",
     minlength: "Un număr de telefon în România are 10 cifre",
     maxlength: "Un număr de telefon în România are 10 cifre"},
-   }
+   },
+   errorElement: "div",
    })
