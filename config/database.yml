@@ -26,4 +26,4 @@ production:
   pool: 5
   timeout: 5000
   username: admin
-  password: parola
+  host: localhost
