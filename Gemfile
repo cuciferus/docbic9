@@ -11,8 +11,8 @@ gem 'simple_form'
 gem 'will_paginate', '~> 3.0.2'
 gem 'inherited_resources'
 #incerc twitter ca primu auth, inca nu merge
-gem 'oa-oauth'
-gem 'twitter'
+#gem 'oa-oauth'
+#gem 'twitter'
 
 gem 'prawn', :git => 'git://github.com/sandal/prawn.git', :tag => '0.11.1', :submodules => true
 
@@ -23,11 +23,9 @@ group :assets do
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
-
+#sa pare ca nu merge in group
+gem 'unicorn'
 gem 'jquery-rails'
-
-# Use unicorn as the web server
-# gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -49,4 +47,3 @@ group :production do
   gem 'pg'
 end
 
-#gem "irt"
